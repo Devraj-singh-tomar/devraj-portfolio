@@ -1,3 +1,4 @@
+import HomeProjects from "@/components/layout/project-section/home-projects";
 import HeroFlipText from "@/components/ui/hero-fliptext";
 import { profile } from "@/data/profile";
 import Image from "next/image";
@@ -6,6 +7,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
+      {/*=======
+       NAVBAR SECTION 
+       =======*/}
       <section className="py-10">
         <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
           <Image
@@ -37,7 +41,7 @@ export default function Home() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline decoration-wavy"
+              className="font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline decoration-wavy"
             >
               {social.label}
             </Link>
@@ -45,9 +49,45 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="-mx-6 border-b border-border" aria-hidden="true" />
+      {/*=======
+       PROJECT SECTION 
+       =======*/}
+      <section className="-mx-6 border-t border-border px-6 py-10">
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Projects
+          </h2>
+          <Link
+            href={"/projects"}
+            className="text-xs text-muted-foreground hover:text-foreground"
+          >
+            All &rarr;
+          </Link>
+        </div>
 
-      <section className="py-10"></section>
+        <HomeProjects />
+      </section>
+
+      {/*=======
+        ENGINEERING SECTION 
+       =======*/}
+      <section className="-mx-6 border-t border-border px-6 py-10">
+        ENGINEERING
+      </section>
+
+      {/*=======
+        EXPERIENCE & OPENSOURCE SECTION 
+       =======*/}
+      <section className="-mx-6 border-t border-border px-6 py-10">
+        EXPERIENCE & OPENSOURCE
+      </section>
+
+      {/*=======
+        CONTACT SECTION 
+       =======*/}
+      <section className="-mx-6 border-t border-border px-6 py-10">
+        CONTACT
+      </section>
     </div>
   );
 }
