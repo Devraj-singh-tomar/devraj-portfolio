@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ Projects Engineering │
+│ Blog Resume Contact │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-## Getting Started
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ HERO │
+│ │
+│ ○ Profile │
+│ │
+│ Devraj │
+│ Software Engineer │
+│ │
+│ Building production-grade distributed systems, │
+│ real-time applications, and developer tools. │
+│ │
+│ [ Resume ] [ Contact ] │
+│ │
+│ GitHub X LinkedIn Email │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-First, run the development server:
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ FEATURED PROJECT │
+│ │
+│ PeerDrop Production │
+│ │
+│ Browser-to-browser file transfer powered by WebRTC. │
+│ Zero cloud storage. Zero uploads. │
+│ │
+│ ───────────────────────────────────────────────────── │
+│ │
+│ Browser │
+│ │ │
+│ Signaling Server │
+│ │ │
+│ STUN / TURN │
+│ │ │
+│ WebRTC DataChannel │
+│ │
+│ ───────────────────────────────────────────────────── │
+│ │
+│ Tech │
+│ │
+│ Next.js • Node • Redis • Docker • Socket.IO • WebRTC │
+│ │
+│ [ Live ] [ GitHub ] [ Architecture ] [ Case Study ] │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ SELECTED PROJECTS View All → │
+│ │
+│ PeerDrop │
+│ Browser-to-browser file transfer using WebRTC. │
+│ Live • GitHub │
+│ │
+│ ────────────────────────────────────────────────────────────────────────── │
+│ │
+│ Liquid Glass UI │
+│ Cross-framework Apple Liquid Glass component library. │
+│ Live • GitHub │
+│ │
+│ ────────────────────────────────────────────────────────────────────────── │
+│ │
+│ Diary System │
+│ Personal engineering documentation platform. │
+│ Live • GitHub │
+│ │
+│ ────────────────────────────────────────────────────────────────────────── │
+│ │
+│ OSS Radar │
+│ Real-time GitHub trend visualization platform. │
+│ Live • GitHub │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ ENGINEERING View All → │
+│ │
+│ ┌──────────────────────────────┐ ┌──────────────────────────────┐ │
+│ │ CASE STUDIES │ │ SYSTEM DESIGN │ │
+│ │ │ │ │ │
+│ │ • PeerDrop │ │ • URL Shortener │ │
+│ │ • Redis Cache │ │ • WhatsApp │ │
+│ │ • Socket Scaling │ │ • Netflix │ │
+│ │ • WebRTC │ │ • Dropbox │ │
+│ └──────────────────────────────┘ └──────────────────────────────┘ │
+│ │
+│ ┌────────────────────────────────────────────────────────────────────────┐ │
+│ │ Engineering Articles → │ │
+│ ├────────────────────────────────────────────────────────────────────────┤ │
+│ │ How ICE Candidates Actually Work │ │
+│ │ Scaling Socket.IO with Redis │ │
+│ │ Designing Chunked File Transfer │ │
+│ │ Understanding Distributed Locks │ │
+│ └────────────────────────────────────────────────────────────────────────┘ │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ EXPERIENCE / OPEN SOURCE │
+│ │
+│ [ Experience ] [ Open Source ] │
+│ │
+│──────────────────────────────────────────────────────────────────────────────│
+│ │
+│ Experience Tab │
+│ │
+│ Company Name │
+│ Role │
+│ Timeline │
+│ Description │
+│ │
+│ │
+│ OR │
+│ │
+│ Open Source Tab │
+│ │
+│ Repository │
+│ PR │
+│ Stars │
+│ Description │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ CONTACT │
+│ │
+│ Interested in collaborating? │
+│ │
+│ Email │
+│ GitHub │
+│ LinkedIn │
+│ X │
+│ │
+│ [ Send Email ] │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ │
+│ DEVRAJ │
+│ │
+│ │
+│ Last Updated • Aug 2026 │
+│ ○ Dark / Light │
+│ │
+└──────────────────────────────────────────────────────────────────────────────┘
