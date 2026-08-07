@@ -20,7 +20,7 @@ export default function Navbar() {
           <Link
             key={href}
             href={href}
-            className="hover:underline decoration-wavy uppercase font-medium"
+            className="hover:underline underline-offset-4 decoration-wavy font-medium"
           >
             {label}
           </Link>

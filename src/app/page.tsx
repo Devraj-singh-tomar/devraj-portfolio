@@ -1,3 +1,53 @@
+import HeroFlipText from "@/components/ui/hero-fliptext";
+import { profile } from "@/data/profile";
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
-  return <h1 className="text-3xl">Devraj</h1>;
+  return (
+    <div>
+      <section className="py-10">
+        <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+          <Image
+            alt={profile.name}
+            src="/devraj.png"
+            width={150}
+            height={100}
+            className="size-24 rounded-full shrink-0 object-cover ring-2 ring-border sm:size-32"
+          />
+
+          <div>
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              {profile.name}
+            </h1>
+            <p className="mt-2">
+              <HeroFlipText />
+            </p>
+          </div>
+        </div>
+
+        <p className="text-foreground leading-relaxed text-sm mt-5 max-w-prose">
+          {profile.bio}
+        </p>
+
+        <div className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          {profile.socials.map((social) => (
+            <Link
+              key={social.href}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline decoration-wavy"
+            >
+              {social.label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <div className="-mx-6 border-b border-border" aria-hidden="true" />
+
+      <section className="py-10"></section>
+    </div>
+  );
 }
