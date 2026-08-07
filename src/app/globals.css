@@ -117,10 +117,22 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+html {
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "calt", "liga";
+}
+
 @layer base {
+  /* Hide scrollbars across the whole site — scrolling still works. */
   * {
-    @apply border-border outline-ring/50;
+    scrollbar-width: none; /* Firefox */
   }
+  *::-webkit-scrollbar {
+    display: none; /* WebKit (Chrome/Safari/Edge) */
+  }
+
   body {
     @apply bg-background text-foreground;
   }
