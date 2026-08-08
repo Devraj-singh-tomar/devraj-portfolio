@@ -1,3 +1,4 @@
+import Experience from "@/components/layout/experience-section/experience";
 import HomeProjects from "@/components/layout/project-section/home-projects";
 import HeroFlipText from "@/components/ui/hero-fliptext";
 import { profile } from "@/data/profile";
@@ -50,6 +51,12 @@ export default function Home() {
       </section>
 
       {/*=======
+        EXPERIENCE & OPENSOURCE SECTION 
+       =======*/}
+
+      <Experience />
+
+      {/*=======
        PROJECT SECTION 
        =======*/}
       <section className="-mx-6 border-t border-border px-6 py-10">
@@ -66,13 +73,6 @@ export default function Home() {
         </div>
 
         <HomeProjects />
-      </section>
-
-      {/*=======
-        EXPERIENCE & OPENSOURCE SECTION 
-       =======*/}
-      <section className="-mx-6 border-t border-border px-6 py-10">
-        EXPERIENCE & OPENSOURCE
       </section>
 
       {/*=======
@@ -96,7 +96,17 @@ export default function Home() {
         CONTACT SECTION 
        =======*/}
       <section className="-mx-6 border-t border-border px-6 py-10">
-        CONTACT
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            CONTACT
+          </h2>
+          <Link
+            href={"/engineering"}
+            className="text-xs text-muted-foreground hover:text-foreground"
+          >
+            All &rarr;
+          </Link>
+        </div>
       </section>
     </div>
   );

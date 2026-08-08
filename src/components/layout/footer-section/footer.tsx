@@ -2,7 +2,7 @@ import ThemeToggle from "@/components/ui/theme-toggle";
 
 export default function Footer() {
   return (
-    <footer className="-mx-6 mt-24 border-t border-border px-6 pt-3">
+    <footer className="-mx-6 border-t border-border px-6 pt-3">
       <div className="flex justify-between items-center pb-1">
         <span className="text-xs text-muted-foreground font-semibold">
           1000 unique visitors
