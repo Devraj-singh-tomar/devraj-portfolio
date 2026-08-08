@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/layout/navbar-section/Navbar";
 import Footer from "@/components/layout/footer-section/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const interHeading = Inter({ subsets: ["latin"], variable: "--font-heading" });
 
@@ -43,16 +44,25 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         jetbrainsMono.variable,
         interHeading.variable,
       )}
+      suppressHydrationWarning
     >
       <body className="min-h-screen bg-background text-foreground">
-        <main className="mx-auto min-h-dvh max-w-2xl border-x border-border px-6">
-          <Navbar />
-          <div className="-mx-6 border-b border-border" aria-hidden="true" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="mx-auto min-h-dvh max-w-2xl border-x border-border px-6">
+            <Navbar />
 
-          {children}
+            <div className="-mx-6 border-b border-border" aria-hidden="true" />
 
-          <Footer />
-        </main>
+            {children}
+
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

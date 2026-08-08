@@ -1,15 +1,18 @@
+import ThemeToggle from "@/components/ui/theme-toggle";
+
 export default function Footer() {
   return (
     <footer className="-mx-6 mt-24 border-t border-border px-6 pt-3">
-      <div className="flex justify-between pb-1">
-        <span className="text-sm text-muted-foreground font-semibold">
+      <div className="flex justify-between items-center pb-1">
+        <span className="text-xs text-muted-foreground font-semibold">
           1000 unique visitors
         </span>
-        <span>Theme</span>
+
+        <ThemeToggle />
       </div>
 
       <div className="overflow-hidden text-center">
-        <h2 className="select-none font-mono text-8xl font-bold tracking-wide text-muted-foreground mask-b-from-10%  md:text-9xl lg:text-[10rem]">
+        <h2 className="select-none  text-[3.5rem] font-bold tracking-wide text-muted-foreground  mask-b-to-85%  sm:text-8xl md:text-9xl lg:text-[10rem] text">
           DEVRAJ
         </h2>
       </div>
