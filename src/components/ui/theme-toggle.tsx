@@ -34,7 +34,7 @@ export default function ThemeToggle() {
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       <Sun
-        className={`h-5 w-5 transition-all ${
+        className={`h-5 w-5 text-foreground transition-all ${
           resolvedTheme === "light"
             ? "rotate-0 scale-100"
             : "-rotate-90 scale-0"
@@ -42,7 +42,7 @@ export default function ThemeToggle() {
       />
 
       <Moon
-        className={`absolute h-5 w-5 transition-all ${
+        className={`absolute h-5 w-5 text-foreground transition-all ${
           resolvedTheme === "dark" ? "rotate-0 scale-100" : "rotate-90 scale-0"
         }`}
       />

@@ -5,7 +5,7 @@ import Projects from "@/components/layout/project-section/projects";
 
 export default function Home() {
   return (
-    <div>
+    <>
       {/*=======
        HERO SECTION 
        =======*/}
@@ -34,6 +34,6 @@ export default function Home() {
 
         IF WANTED
        =======*/}
-    </div>
+    </>
   );
 }

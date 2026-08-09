@@ -18,9 +18,9 @@ export default function ProjectCard({
   stars,
 }: ProjectCardProp) {
   return (
-    <div className="border-b border-border py-6 dark:border-white/10">
+    <div className="border-b border-border py-6">
       <div className="flex items-baseline justify-between gap-3">
-        <h3 className="min-w-0 font-semibold">{title}</h3>
+        <h3 className="min-w-0 text-foreground font-semibold">{title}</h3>
         {impact && (
           <span className="shrink-0 text-xs font-medium text-zinc-700 dark:text-zinc-300">
             {impact}
@@ -28,17 +28,17 @@ export default function ProjectCard({
         )}
       </div>
 
-      <p className="mt-2 max-w-prose text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+      <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted-foreground">
         {description}
       </p>
 
-      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-500">
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-foreground">
         {liveLink && (
           <Link
             href={liveLink}
             target="_blank"
             rel="noopener"
-            className="hover:text-zinc-900 flex dark:hover:text-zinc-50 items-center gap-1"
+            className="flex items-center gap-1"
           >
             Live <ExternalLinkIcon size={12} />
           </Link>
@@ -52,7 +52,7 @@ export default function ProjectCard({
             target="_blank"
             rel="noopener"
             aria-label={`${title} on GitHub`}
-            className="inline-flex items-center gap-1.5 hover:text-zinc-900 dark:hover:text-zinc-50"
+            className="inline-flex items-center gap-1.5"
           >
             <svg
               viewBox="0 0 16 16"

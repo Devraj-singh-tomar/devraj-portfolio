@@ -16,7 +16,7 @@ export default function Hero() {
         />
 
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl text-foreground">
             {profile.name}
           </h1>
           <p className="mt-2">
@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <p className="text-foreground leading-relaxed text-sm mt-5 max-w-prose">
+      <p className="text-muted-foreground leading-relaxed text-sm mt-5 max-w-prose">
         {profile.bio}
       </p>
 
@@ -36,7 +36,7 @@ export default function Hero() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline decoration-wavy"
+            className="font-medium text-foreground underline-offset-4 hover:underline decoration-wavy"
           >
             {social.label}
           </Link>
