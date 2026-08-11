@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProfessionalExperience from "./professional-experience";
 import OpenSourceExperience from "./open-source-experience";
+import { experience } from "@/data/experience";
 
 export default function Experience() {
   return (
@@ -20,9 +21,9 @@ export default function Experience() {
 
         <TabsContent
           value="professional"
-          className="mt-2 text-zinc-600 dark:text-muted-foreground"
+          className="mt-2 w-full text-zinc-600 dark:text-muted-foreground"
         >
-          <ProfessionalExperience />
+          <ProfessionalExperience experiences={experience} />
         </TabsContent>
         <TabsContent
           value="open-source"

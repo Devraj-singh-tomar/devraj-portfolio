@@ -4,7 +4,7 @@ export const experience: ExperienceItemType[] = [
   {
     id: "mem0",
     companyName: "Mem0",
-    companyLogo: "/logos/mem0.png",
+    companyLogo: "/devraj.png",
     companyWebsite: "https://mem0.ai",
     isCurrentEmployer: true,
     positions: [
@@ -44,7 +44,7 @@ export const experience: ExperienceItemType[] = [
   {
     id: "turboml",
     companyName: "Turbo ML",
-    companyLogo: "/logos/turboml.png",
+    companyLogo: "/devraj.png",
     positions: [
       {
         id: "turboml-ai",
