@@ -42,3 +42,41 @@ export type ExperienceItemType = {
   /** Indicates if this is the user's current employer */
   isCurrentEmployer?: boolean;
 };
+
+export type OpenSourceStatus = "merged" | "open" | "closed";
+
+export type OpenSourceContributionType =
+  | "feature"
+  | "bugfix"
+  | "documentation"
+  | "performance"
+  | "developer-experience"
+  | "maintenance";
+
+export interface OpenSourceContribution {
+  id: string;
+
+  repository: {
+    name: string;
+    owner: string;
+    url: string;
+  };
+
+  contribution: {
+    title: string;
+    description: string;
+    type: OpenSourceContributionType;
+  };
+
+  status: OpenSourceStatus;
+
+  reference: {
+    type: "pull-request" | "issue";
+    number: number;
+    url: string;
+  };
+
+  technologies: string[];
+
+  date: string;
+}
