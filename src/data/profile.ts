@@ -9,12 +9,12 @@ export const profile = {
 
   socials: [
     {
-      label: "GitHub",
-      href: "https://github.com/Devraj-singh-tomar",
+      label: "Twitter(X)",
+      href: "https://x.com/tomar_devraj01",
     },
     {
-      label: "X",
-      href: "https://x.com/tomar_devraj01",
+      label: "GitHub",
+      href: "https://github.com/Devraj-singh-tomar",
     },
     {
       label: "LinkedIn",

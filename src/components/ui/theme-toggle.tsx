@@ -31,6 +31,7 @@ export default function ThemeToggle() {
       type="button"
       variant="ghost"
       size="icon"
+      className="rounded-full cursor-pointer"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       <Sun

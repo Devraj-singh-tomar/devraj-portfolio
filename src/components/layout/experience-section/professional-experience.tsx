@@ -45,7 +45,7 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
     <article className="space-y-5">
       {/* Company */}
       <div className="flex items-center gap-3">
-        <div className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-md border border-border bg-muted">
+        <div className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted">
           {experience.companyLogo ? (
             <img
               src={experience.companyLogo}
@@ -60,7 +60,7 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
           )}
         </div>
 
-        <h3 className="text-base font-semibold tracking-tight">
+        <h3 className="text-foreground text-[1rem] hover:underline underline-offset-4 decoration-wavy font-semibold tracking-tight">
           {experience.companyWebsite ? (
             <Link
               href={experience.companyWebsite}
@@ -87,8 +87,8 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
       </div>
 
       {/* Positions */}
-      <div className="relative ml-3 border-l border-border pl-6">
-        <div className="space-y-6">
+      <div className="ml-3">
+        <div className="space-y-5">
           {experience.positions.map((position) => (
             <ExperiencePositionItem key={position.id} position={position} />
           ))}
@@ -120,11 +120,6 @@ function ExperiencePositionItem({ position }: ExperiencePositionItemProps) {
     >
       <div className="relative">
         {/* Timeline node */}
-        <span
-          className="absolute -left-[31px] top-1.5 size-2 rounded-full border-2 border-background bg-border"
-          aria-hidden="true"
-        />
-
         <CollapsibleTrigger
           className={cn(
             "group flex w-full items-start gap-3 text-left",
@@ -134,7 +129,7 @@ function ExperiencePositionItem({ position }: ExperiencePositionItemProps) {
           {/* Position icon */}
           <div
             className={cn(
-              "flex size-7 shrink-0 items-center justify-center rounded-md",
+              "flex size-7 shrink-0 items-center justify-center rounded-full",
               "border border-border bg-background",
               "text-muted-foreground",
             )}
@@ -147,7 +142,7 @@ function ExperiencePositionItem({ position }: ExperiencePositionItemProps) {
           {/* Position information */}
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-4">
-              <h4 className="font-medium leading-6 text-foreground">
+              <h4 className="font-medium leading-6 text-foreground/85">
                 {position.title}
               </h4>
 
@@ -244,7 +239,7 @@ function ExperiencePositionItem({ position }: ExperiencePositionItemProps) {
         </CollapsibleContent>
 
         {/* Skills */}
-        {position.skills?.length > 0 && (
+        {position.skills && position.skills.length > 0 && (
           <ul className="mt-3 ml-10 flex flex-wrap gap-1.5">
             {position.skills?.map((skill) => (
               <li key={skill}>
@@ -262,10 +257,9 @@ function Skill({ className, ...props }: ComponentProps<"span">) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-md",
-        "border border-border bg-muted/40",
+        "inline-flex items-center rounded-full bg-muted",
         "px-2 py-0.5",
-        "font-mono text-[11px] text-muted-foreground",
+        "text-[.64rem] font-medium text-muted-foreground",
         className,
       )}
       {...props}

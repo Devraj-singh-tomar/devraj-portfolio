@@ -13,6 +13,7 @@ export const experience: ExperienceItemType[] = [
         title: "Member of Technical Staff",
         employmentType: "Full-time",
         employmentPeriod: { start: "04.2026" },
+        skills: ["Typescript", "Javascript", "AWS"],
         description: `- Merged 83 PRs (+55K/-21K lines across 656 files), spanning the Python & TypeScript SDKs, vector stores, self-hosted server, editor plugins, CLI, and docs.
 - Patched a critical Remote Code Execution vulnerability (unsafe pickle deserialization) in the FAISS vector store, closing a long-open security issue.
 - Hardened the self-hosted server: enforced admin-role auth on /configure and /reset (403 for non-admins), upgraded to PostgreSQL 17 + pgvector 0.8.2, and shipped a migration guide.

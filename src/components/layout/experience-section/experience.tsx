@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProfessionalExperience from "./professional-experience";
-import OpenSourceExperience from "./open-source-experience";
 import { experience } from "@/data/experience";
+import OpenSourceExperience from "./open-source-experience";
+import ProfessionalExperience from "./professional-experience";
 
 export default function Experience() {
   return (
@@ -19,16 +19,11 @@ export default function Experience() {
           <TabsTrigger value="open-source">Open Source</TabsTrigger>
         </TabsList>
 
-        <TabsContent
-          value="professional"
-          className="mt-2 w-full text-zinc-600 dark:text-muted-foreground"
-        >
+        <TabsContent value="professional" className="mt-2 w-full">
           <ProfessionalExperience experiences={experience} />
         </TabsContent>
-        <TabsContent
-          value="open-source"
-          className="mt-2 text-zinc-600 dark:text-muted-foreground"
-        >
+
+        <TabsContent value="open-source" className="mt-2 w-full">
           <OpenSourceExperience />
         </TabsContent>
       </Tabs>
