@@ -1,6 +1,6 @@
 import Engineering from "@/components/layout/engineering-section/engineering";
 import Experience from "@/components/layout/experience-section/experience";
-import Hero from "@/components/layout/hero-section.tsx/hero";
+import Hero from "@/components/layout/hero-section/hero";
 import Projects from "@/components/layout/project-section/projects";
 
 export default function Home() {
