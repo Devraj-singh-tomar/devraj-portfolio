@@ -1,7 +1,7 @@
-import Engineering from "@/components/layout/engineering-section/engineering";
-import Experience from "@/components/layout/experience-section/experience";
-import Hero from "@/components/layout/hero-section/hero";
-import Projects from "@/components/layout/project-section/projects";
+import Engineering from "@/components/sections/engineering/engineering";
+import Experience from "@/components/sections/experience/experience";
+import Hero from "@/components/sections/hero/hero";
+import Projects from "@/components/sections/project/projects";
 
 export default function Home() {
   return (

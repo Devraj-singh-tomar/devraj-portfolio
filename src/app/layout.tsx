@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono, Inter } from "next/font/google";
+import Footer from "@/components/sections/footer/footer";
+import Navbar from "@/components/sections/navbar/Navbar";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/layout/navbar-section/Navbar";
-import Footer from "@/components/layout/footer-section/footer";
-import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const interHeading = Inter({ subsets: ["latin"], variable: "--font-heading" });

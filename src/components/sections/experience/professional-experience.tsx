@@ -8,12 +8,12 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { ExperienceItemType, ExperiencePositionItemType } from "@/types/types";
+import { differenceInMonths, parse } from "date-fns";
 import {
   BriefcaseBusinessIcon,
   ChevronDownIcon,
   InfinityIcon,
 } from "lucide-react";
-import { differenceInMonths, parse } from "date-fns";
 import Link from "next/link";
 import { ComponentProps, useState } from "react";
 import ReactMarkdown from "react-markdown";
