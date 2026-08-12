@@ -1,7 +1,7 @@
 import { projects } from "@/data/projects";
 import ProjectCard from "./project-card";
 
-export default function HomeProjects() {
+export default function FeaturedProjects() {
   return (
     <div className="mt-1">
       {projects.map((p) => (

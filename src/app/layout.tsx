@@ -1,5 +1,5 @@
 import Footer from "@/components/sections/footer/footer";
-import Navbar from "@/components/sections/navbar/Navbar";
+import Navbar from "@/components/sections/navbar/navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import HomeProjects from "./home-projects";
+import FeaturedProjects from "./featured-projects";
 
 export default function Projects() {
   return (
@@ -16,7 +16,7 @@ export default function Projects() {
         </Link>
       </div>
 
-      <HomeProjects />
+      <FeaturedProjects />
     </section>
   );
 }
