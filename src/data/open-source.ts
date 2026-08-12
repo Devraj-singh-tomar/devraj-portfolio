@@ -1,4 +1,4 @@
-import { OpenSourceContribution } from "@/types/types";
+import { OpenSourceContribution } from "@/types/experience";
 
 export const openSourceContributions: OpenSourceContribution[] = [
   {

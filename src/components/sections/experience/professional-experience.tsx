@@ -7,7 +7,10 @@ import {
 } from "@/components/ui/collapsible";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { ExperienceItemType, ExperiencePositionItemType } from "@/types/types";
+import {
+  ExperienceItemType,
+  ExperiencePositionItemType,
+} from "@/types/experience";
 import { differenceInMonths, parse } from "date-fns";
 import {
   BriefcaseBusinessIcon,
