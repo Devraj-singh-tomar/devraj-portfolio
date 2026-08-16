@@ -9,7 +9,7 @@ export const profile = {
 
   socials: [
     {
-      label: "Twitter(X)",
+      label: "X(Twitter)",
       href: "https://x.com/tomar_devraj01",
     },
     {
