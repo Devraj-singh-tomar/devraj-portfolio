@@ -2,16 +2,15 @@ import GithubIcon from "@/components/ui/github-icon";
 import { openSourceContributions } from "@/data/open-source";
 import { cn } from "@/lib/utils";
 import { OpenSourceContribution } from "@/types/experience";
-import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function OpenSourceExperience() {
   return (
-    <div className="space-y-4">
+    <div>
       {openSourceContributions.map((contribution) => (
         <OpenSourceExperienceItem
           key={contribution.id}
-          openSourceExperience={contribution}
+          contribution={contribution}
         />
       ))}
     </div>
@@ -19,58 +18,66 @@ export default function OpenSourceExperience() {
 }
 
 type OpenSourceExperienceType = {
-  openSourceExperience: OpenSourceContribution;
+  contribution: OpenSourceContribution;
 };
 
-function OpenSourceExperienceItem({
-  openSourceExperience,
-}: OpenSourceExperienceType) {
-  return (
-    <div className="space-y-4 border-b border-border py-6">
-      <div className="flex items-center justify-between">
-        <div className="flex flex-col">
-          <h2 className="min-w-0 text-foreground font-semibold">
-            {openSourceExperience.repository.name}
-          </h2>
+function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
+  const referenceLabel =
+    contribution.reference.type === "pull-request" ? "PR" : "Issue";
 
-          <span className="text-muted-foreground text-xs">
-            {openSourceExperience.repository.owner}
-          </span>
+  return (
+    <article className="border-b border-border py-6">
+      <div className="flex items-center justify-between">
+        <div className="flex space-y-1 flex-col">
+          <p className="text-foreground text-sm font-semibold">
+            {contribution.repository.name}
+          </p>
+
+          <p className="text-muted-foreground text-xs">
+            {contribution.repository.owner}
+          </p>
         </div>
 
         <span
-          className={cn(
-            `${openSourceExperience.status === "merged" ? "text-green-500" : openSourceExperience.status === "closed" ? "text-red-500" : "text-blue-500"}`,
-            "capitalize text-xs",
-          )}
+          className={cn("capitalize relative text-xs text-muted-foreground")}
         >
-          {openSourceExperience.status}
+          <span
+            className={cn(
+              `${contribution.status === "merged" ? "bg-emerald-500/80" : contribution.status === "closed" ? "bg-rose-500/80" : "bg-sky-500/80"}`,
+              "absolute size-2 rounded-full -left-4 translate-y-1/2 animate-pulse",
+            )}
+          />
+          {contribution.status}
         </span>
       </div>
 
-      <span>
-        ({openSourceExperience.contribution.type}){" "}
-        <span className="text-foreground/85 font-medium">
-          {openSourceExperience.contribution.title}
-        </span>
-      </span>
-
-      <p className="text-xs text-muted-foreground">
-        {openSourceExperience.contribution.description}
+      <p className="uppercase text-xs tracking-wider text-muted-foreground mt-5">
+        {contribution.contribution.type}
       </p>
 
-      <div className="flex items-center justify-between">
-        <span>PR #{openSourceExperience.reference.number}</span>
+      <h3 className="text-base text-foreground/85 mt-0.5 font-medium">
+        {contribution.contribution.title}
+      </h3>
+
+      <p className="text-xs mt-1 text-muted-foreground line-clamp-2">
+        {contribution.contribution.description}
+      </p>
+
+      <div className="flex items-center mt-5 justify-between">
+        <span className="text-sm">
+          {referenceLabel} #{contribution.reference.number}
+        </span>
 
         <Link
           className="flex items-center gap-1"
-          href={openSourceExperience.reference.url}
+          href={contribution.reference.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${contribution.reference.type} on GitHub`}
         >
           <GithubIcon />
-
-          <ArrowRightIcon className="size-3" />
         </Link>
       </div>
-    </div>
+    </article>
   );
 }

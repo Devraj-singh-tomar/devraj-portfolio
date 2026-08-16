@@ -18,7 +18,7 @@ import {
   InfinityIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { ComponentProps, useState } from "react";
+import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 export interface ProfessionalExperienceProps {
@@ -69,7 +69,6 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
               href={experience.companyWebsite}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-muted-foreground"
             >
               {experience.companyName}
             </Link>
@@ -242,7 +241,7 @@ function ExperiencePositionItem({ position }: ExperiencePositionItemProps) {
         </CollapsibleContent>
 
         {/* Skills */}
-        {position.skills && position.skills.length > 0 && (
+        {/* {position.skills && position.skills.length > 0 && (
           <ul className="mt-3 ml-10 flex flex-wrap gap-1.5">
             {position.skills?.map((skill) => (
               <li key={skill}>
@@ -250,25 +249,25 @@ function ExperiencePositionItem({ position }: ExperiencePositionItemProps) {
               </li>
             ))}
           </ul>
-        )}
+        )} */}
       </div>
     </Collapsible>
   );
 }
 
-function Skill({ className, ...props }: ComponentProps<"span">) {
-  return (
-    <span
-      className={cn(
-        "inline-flex items-center rounded-full bg-muted",
-        "px-2 py-0.5",
-        "text-[.64rem] font-medium text-muted-foreground",
-        className,
-      )}
-      {...props}
-    />
-  );
-}
+// function Skill({ className, ...props }: ComponentProps<"span">) {
+//   return (
+//     <span
+//       className={cn(
+//         "inline-flex items-center rounded-full bg-muted",
+//         "px-2 py-0.5",
+//         "text-[.64rem] font-medium text-muted-foreground",
+//         className,
+//       )}
+//       {...props}
+//     />
+//   );
+// }
 
 function formatDuration(start: string, end?: string): string {
   const startHasMonth = start.includes(".");
