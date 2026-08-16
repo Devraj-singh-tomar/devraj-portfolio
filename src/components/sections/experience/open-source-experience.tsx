@@ -1,4 +1,4 @@
-import GithubIcon from "@/components/ui/github-icon";
+import { Icons } from "@/components/ui/icons";
 import { openSourceContributions } from "@/data/open-source";
 import { cn } from "@/lib/utils";
 import { OpenSourceContribution } from "@/types/experience";
@@ -75,7 +75,7 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
           rel="noopener noreferrer"
           aria-label={`View ${contribution.reference.type} on GitHub`}
         >
-          <GithubIcon />
+          <Icons.github />
         </Link>
       </div>
     </article>
