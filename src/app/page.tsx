@@ -1,4 +1,4 @@
-import Engineering from "@/components/sections/engineering/engineering";
+import EngineeringPreview from "@/components/sections/engineering/engineering-preview";
 import Experience from "@/components/sections/experience/experience";
 import Hero from "@/components/sections/hero/hero";
 import Projects from "@/components/sections/project/projects";
@@ -27,7 +27,7 @@ export default function Home() {
         ENGINEERING SECTION 
        =======*/}
 
-      <Engineering />
+      <EngineeringPreview />
 
       {/*=======
         CONTACT SECTION 
