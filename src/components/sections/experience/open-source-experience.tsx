@@ -28,7 +28,7 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
   return (
     <article className="border-b border-border py-6">
       <div className="flex items-center justify-between">
-        <div className="flex space-y-1 flex-col">
+        <div className="flex flex-col">
           <p className="text-foreground text-sm font-semibold">
             {contribution.repository.name}
           </p>
