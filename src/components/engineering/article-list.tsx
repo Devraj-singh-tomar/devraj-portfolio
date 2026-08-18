@@ -8,13 +8,13 @@ interface ArticleListProps {
 export default function ArticleList({
   featuredOnly = false,
 }: ArticleListProps) {
-  const visibleArticlesonHomePage = featuredOnly
+  const visibleArticles = featuredOnly
     ? articles.filter((article) => article.featured).slice(0, 2)
     : articles;
 
   return (
     <>
-      {visibleArticlesonHomePage.map((article) => (
+      {visibleArticles.map((article) => (
         <ArticleItem key={article.slug} article={article} />
       ))}
     </>

@@ -48,18 +48,18 @@ export default function ProjectCard({
         <div className="size-1 rounded-full bg-muted-foreground" />
 
         {githubLink && (
-          <a
+          <Link
             href={githubLink}
             target="_blank"
             rel="noopener"
             aria-label={`${title} on GitHub`}
-            className="inline-flex items-center gap-1.5"
+            className="inline-flex text-foreground transition-colors hover:text-muted-foreground items-center gap-1.5"
           >
             <Icons.github />
             {typeof stars === "number" && stars > 0 && (
               <span>{stars.toLocaleString()}</span>
             )}
-          </a>
+          </Link>
         )}
       </div>
     </div>

@@ -69,7 +69,7 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
         </span>
 
         <Link
-          className="flex items-center gap-1"
+          className="flex items-center text-foreground transition-colors hover:text-muted-foreground gap-1"
           href={contribution.reference.url}
           target="_blank"
           rel="noopener noreferrer"

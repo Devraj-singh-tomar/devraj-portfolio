@@ -1,6 +1,7 @@
 import { CaseStudy } from "@/types/engineering";
 import Link from "next/link";
 import { Icons } from "../ui/icons";
+import { ExternalLinkIcon } from "lucide-react";
 
 interface CaseStudyItemProps {
   caseStudy: CaseStudy;
@@ -45,19 +46,19 @@ export default function CaseStudyItem({ caseStudy }: CaseStudyItemProps) {
                 href={caseStudy.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-foreground transition-colors hover:text-muted-foreground"
+                className="flex items-center gap-1 text-xs text-foreground transition-colors hover:text-muted-foreground"
               >
-                Live Demo ↗
+                Live <ExternalLinkIcon size={12} />
               </Link>
             )}
-
-            <Link
-              href={`/engineering/case-study/${caseStudy.slug}`}
-              className="text-xs text-foreground transition-colors hover:text-muted-foreground"
-            >
-              Read case study →
-            </Link>
           </div>
+
+          <Link
+            href={`/engineering/case-study/${caseStudy.slug}`}
+            className="text-xs text-foreground transition-colors hover:text-muted-foreground"
+          >
+            Read case study →
+          </Link>
         </div>
       </div>
     </article>
