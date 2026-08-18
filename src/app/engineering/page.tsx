@@ -1,5 +1,6 @@
 import ArticleList from "@/components/engineering/article-list";
 import CaseStudyList from "@/components/engineering/case-study-list";
+import SystemDesignList from "@/components/engineering/system-design-list";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function EngineeringPage() {
@@ -29,7 +30,7 @@ export default function EngineeringPage() {
         </TabsContent>
 
         <TabsContent value="system-design" className="mt-2 w-full">
-          system-design list
+          <SystemDesignList />
         </TabsContent>
 
         <TabsContent value="article" className="mt-2 w-full">

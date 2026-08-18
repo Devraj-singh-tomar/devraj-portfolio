@@ -1,5 +1,6 @@
 import ArticleList from "@/components/engineering/article-list";
 import CaseStudyList from "@/components/engineering/case-study-list";
+import SystemDesignList from "@/components/engineering/system-design-list";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 
@@ -36,7 +37,7 @@ export default function EngineeringPreview() {
         </TabsContent>
 
         <TabsContent value="system-design" className="mt-2 w-full">
-          system-design list
+          <SystemDesignList featuredOnly />
         </TabsContent>
 
         <TabsContent value="article" className="mt-2 w-full">
