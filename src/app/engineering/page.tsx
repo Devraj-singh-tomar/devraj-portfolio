@@ -1,3 +1,4 @@
+import ArticleList from "@/components/engineering/article-list";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function EngineeringPage() {
@@ -31,7 +32,7 @@ export default function EngineeringPage() {
         </TabsContent>
 
         <TabsContent value="article" className="mt-2 w-full">
-          article list
+          <ArticleList />
         </TabsContent>
       </Tabs>
     </section>
