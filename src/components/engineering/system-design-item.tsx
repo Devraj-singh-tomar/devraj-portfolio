@@ -22,18 +22,16 @@ export default function SystemDesignItem({
   systemDesign,
 }: SystemDesignItemProps) {
   return (
-    <article className="border-b border-border py-8">
+    <article className="border-b border-border py-6">
       <div className="space-y-5">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-              {formatStatus(systemDesign.status)}
-            </span>
+        <div className="flex items-center gap-4">
+          <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+            {formatStatus(systemDesign.status)}
+          </span>
 
-            <span className="text-xs text-zinc-500">
-              {formatDate(systemDesign.date)}
-            </span>
-          </div>
+          <span className="text-xs text-zinc-500">
+            {formatDate(systemDesign.date)}
+          </span>
         </div>
 
         <div className="space-y-2">

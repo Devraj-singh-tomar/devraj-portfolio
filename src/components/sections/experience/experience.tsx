@@ -12,7 +12,7 @@ export default function Experience() {
         </h2>
       </div>
 
-      <Tabs defaultValue="account" className="flex py-6 items-start">
+      <Tabs defaultValue="account" className="flex mt-6 items-start">
         <TabsList variant="line" className="w-full">
           <TabsTrigger value="professional">Professional</TabsTrigger>
           <div className="h-5 w-px bg-border" />

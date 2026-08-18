@@ -19,7 +19,7 @@ export default function EngineeringPreview() {
         </Link>
       </div>
 
-      <Tabs defaultValue="account" className="flex py-6 items-start">
+      <Tabs defaultValue="account" className="flex mt-6 items-start">
         <TabsList variant="line" className="w-full">
           <TabsTrigger value="case-study">Case Study</TabsTrigger>
 

@@ -9,7 +9,7 @@ interface CaseStudyItemProps {
 
 export default function CaseStudyItem({ caseStudy }: CaseStudyItemProps) {
   return (
-    <article className="border-b border-border py-8">
+    <article className="border-b border-border py-6">
       <div className="space-y-5">
         <div className="space-y-2">
           <h2 className="text-lg font-semibold tracking-tight text-foreground">
