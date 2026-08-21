@@ -77,7 +77,8 @@ export default function SystemDesignItem({
           </div>
 
           <Link
-            href={`/engineering/system-design/${systemDesign.slug}`}
+            href={`${systemDesign.url}`}
+            target="_blank"
             className="text-xs text-foreground transition-colors hover:text-muted-foreground"
           >
             Read design →

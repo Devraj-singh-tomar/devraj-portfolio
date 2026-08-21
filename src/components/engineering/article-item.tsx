@@ -44,7 +44,8 @@ export default function ArticleItem({ article }: ArticleItemProps) {
           <span className="text-xs text-zinc-500">{article.readingTime}</span>
 
           <Link
-            href={`/engineering/article/${article.slug}`}
+            href={`${article.url}`}
+            target="_blank"
             className="text-xs text-foreground transition-colors hover:text-muted-foreground"
           >
             Read article →

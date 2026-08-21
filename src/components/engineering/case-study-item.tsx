@@ -54,7 +54,8 @@ export default function CaseStudyItem({ caseStudy }: CaseStudyItemProps) {
           </div>
 
           <Link
-            href={`/engineering/case-study/${caseStudy.slug}`}
+            href={`${caseStudy.url}`}
+            target="_blank"
             className="text-xs text-foreground transition-colors hover:text-muted-foreground"
           >
             Read case study →

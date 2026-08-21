@@ -12,6 +12,7 @@ export const articles: Article[] = [
     technologies: ["WebRTC", "STUN", "TURN", "Networking"],
     tags: ["webrtc", "networking", "real-time-systems"],
     featured: true,
+    url: "",
   },
 
   {
@@ -25,6 +26,7 @@ export const articles: Article[] = [
     technologies: ["Node.js", "Redis", "Queues", "Workers", "Caching"],
     tags: ["scalability", "distributed-systems", "performance"],
     featured: true,
+    url: "",
   },
 
   {
@@ -38,6 +40,7 @@ export const articles: Article[] = [
     technologies: ["Socket.IO", "Redis", "WebSockets", "Load Balancing"],
     tags: ["websockets", "redis", "scalability"],
     featured: false,
+    url: "",
   },
 
   {
@@ -51,6 +54,7 @@ export const articles: Article[] = [
     technologies: ["WebRTC", "ArrayBuffer", "DataChannel", "Backpressure"],
     tags: ["webrtc", "file-transfer", "performance"],
     featured: false,
+    url: "",
   },
 ];
 
@@ -74,6 +78,7 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
     github: "https://github.com/Devraj-singh-tomar/peerdrop",
     demo: "https://peerdrop.example.com",
+    url: "",
   },
 
   {
@@ -88,6 +93,7 @@ export const caseStudies: CaseStudy[] = [
     featured: true,
     github: "https://github.com/Devraj-singh-tomar/liquid-glass",
     demo: "https://liquid-glass.example.com",
+    url: "",
   },
 
   {
@@ -101,6 +107,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["developer-tools", "documentation", "knowledge-management"],
     featured: false,
     github: "https://github.com/Devraj-singh-tomar/engineering-diary",
+    url: "",
   },
 ];
 
@@ -118,6 +125,7 @@ export const systemDesigns: SystemDesign[] = [
     featured: true,
     github: "https://github.com/Devraj-singh-tomar/url-shortener",
     demo: "https://url-shortener.example.com",
+    url: "",
   },
 
   {
@@ -132,6 +140,7 @@ export const systemDesigns: SystemDesign[] = [
     status: "benchmarked",
     featured: true,
     github: "https://github.com/Devraj-singh-tomar/distributed-rate-limiter",
+    url: "",
   },
 
   {
@@ -145,6 +154,7 @@ export const systemDesigns: SystemDesign[] = [
     tags: ["system-design", "kafka", "queues", "reliability"],
     status: "designed",
     featured: false,
+    url: "",
   },
 
   {
@@ -158,5 +168,6 @@ export const systemDesigns: SystemDesign[] = [
     tags: ["system-design", "real-time", "websockets", "redis"],
     status: "designed",
     featured: false,
+    url: "",
   },
 ];

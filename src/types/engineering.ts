@@ -13,6 +13,7 @@ export interface EngineeringBase {
   technologies: string[];
   tags: string[];
   featured: boolean;
+  url: string;
 }
 
 export interface Article extends EngineeringBase {
