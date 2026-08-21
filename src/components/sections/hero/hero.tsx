@@ -5,14 +5,14 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="py-10">
+    <section className="py-14">
       <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
         <Image
           alt={profile.name}
           src="/devraj.png"
-          width={150}
+          width={100}
           height={100}
-          className="size-24 rounded-full shrink-0 object-cover ring-2 ring-border sm:size-32"
+          className="size-24 rounded-lg shrink-0 object-cover ring-1 ring-border sm:size-32"
         />
 
         <div>
@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <p className="text-muted-foreground leading-relaxed text-sm mt-5 max-w-prose">
+      <p className="text-muted-foreground leading-relaxed text-sm mt-6 max-w-prose">
         {profile.bio}
       </p>
 

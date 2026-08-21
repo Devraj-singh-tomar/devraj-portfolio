@@ -23,7 +23,7 @@ export default function ProjectCard({
       <div className="flex items-baseline justify-between gap-3">
         <h3 className="min-w-0 text-foreground font-semibold">{title}</h3>
         {impact && (
-          <span className="shrink-0 text-xs font-medium text-zinc-700 dark:text-zinc-300">
+          <span className="shrink-0 text-xs font-medium text-zinc-500">
             {impact}
           </span>
         )}
@@ -34,19 +34,6 @@ export default function ProjectCard({
       </p>
 
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-foreground">
-        {liveLink && (
-          <Link
-            href={liveLink}
-            target="_blank"
-            rel="noopener"
-            className="flex items-center gap-1"
-          >
-            Live <ExternalLinkIcon size={12} />
-          </Link>
-        )}
-
-        <div className="size-1 rounded-full bg-muted-foreground" />
-
         {githubLink && (
           <Link
             href={githubLink}
@@ -57,8 +44,19 @@ export default function ProjectCard({
           >
             <Icons.github />
             {typeof stars === "number" && stars > 0 && (
-              <span>{stars.toLocaleString()}</span>
+              <span className="text-zinc-500">{stars.toLocaleString()}</span>
             )}
+          </Link>
+        )}
+
+        {liveLink && (
+          <Link
+            href={liveLink}
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-1"
+          >
+            Live <ExternalLinkIcon size={12} />
           </Link>
         )}
       </div>

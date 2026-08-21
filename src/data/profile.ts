@@ -17,8 +17,8 @@ export const profile = {
       href: "https://github.com/Devraj-singh-tomar",
     },
     {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/your-linkedin",
+      label: "Resume",
+      href: "/",
     },
   ],
 } as const;

@@ -10,7 +10,7 @@ const navLinks: NavlinkProps[] = [
   { label: "Home", href: "/" },
   { label: "Engineering", href: "/engineering" },
   { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
+  { label: "Resume", href: "/" },
 ];
 
 export default function Navbar() {
@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm sm:gap-x-4">
         {navLinks.map(({ href, label }) => (
           <Link
-            key={href}
+            key={label}
             href={href}
             className="text-foreground hover:underline underline-offset-4 decoration-wavy font-medium"
           >

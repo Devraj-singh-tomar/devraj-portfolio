@@ -33,7 +33,7 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
             {contribution.repository.name}
           </p>
 
-          <p className="text-muted-foreground text-xs">
+          <p className="text-zinc-500 text-xs">
             {contribution.repository.owner}
           </p>
         </div>
@@ -43,19 +43,19 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
         >
           <span
             className={cn(
-              `${contribution.status === "merged" ? "bg-emerald-500/80" : contribution.status === "closed" ? "bg-rose-500/80" : "bg-sky-500/80"}`,
-              "absolute size-2 rounded-full -left-4 translate-y-1/2 animate-pulse",
+              `${contribution.status === "merged" ? "bg-emerald-500 text-emerald-600 dark:text-emerald-400" : contribution.status === "closed" ? "bg-rose-500 text-rose-600 dark:text-rose-400" : "bg-sky-500 text-sky-600 dark:text-sky-400"}`,
+              "absolute size-2 rounded-full -left-4 translate-y-1/2",
             )}
           />
           {contribution.status}
         </span>
       </div>
 
-      <p className="uppercase text-xs tracking-wider text-muted-foreground mt-5">
+      <p className="uppercase font-medium text-xs tracking-wider text-zinc-500 mt-5">
         {contribution.contribution.type}
       </p>
 
-      <h3 className="text-base text-foreground/85 mt-0.5 font-medium">
+      <h3 className="text-base text-foreground mt-0.5 font-medium">
         {contribution.contribution.title}
       </h3>
 
@@ -64,7 +64,7 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
       </p>
 
       <div className="flex items-center mt-5 justify-between">
-        <span className="text-sm">
+        <span className="text-xs text-zinc-500">
           {referenceLabel} #{contribution.reference.number}
         </span>
 

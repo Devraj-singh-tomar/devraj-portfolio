@@ -82,8 +82,8 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
             className="relative flex items-center justify-center"
             aria-label="Current Employer"
           >
-            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-sky-500 opacity-50" />
-            <span className="relative inline-flex size-2 rounded-full bg-sky-500" />
+            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-foreground opacity-50" />
+            <span className="relative inline-flex size-2 rounded-full bg-foreground" />
           </span>
         )}
       </div>
@@ -144,7 +144,7 @@ function ExperiencePositionItem({ position }: ExperiencePositionItemProps) {
           {/* Position information */}
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-4">
-              <h4 className="font-medium leading-6 text-foreground/85">
+              <h4 className="font-medium leading-6 text-foreground">
                 {position.title}
               </h4>
 
