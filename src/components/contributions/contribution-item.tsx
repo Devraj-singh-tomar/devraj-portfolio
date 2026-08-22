@@ -1,27 +1,15 @@
-import { Icons } from "@/components/ui/icons";
-import { openSourceContributions } from "@/data/open-source";
 import { cn } from "@/lib/utils";
 import { OpenSourceContribution } from "@/types/experience";
 import Link from "next/link";
-
-export default function OpenSourceExperience() {
-  return (
-    <div>
-      {openSourceContributions.map((contribution) => (
-        <OpenSourceExperienceItem
-          key={contribution.id}
-          contribution={contribution}
-        />
-      ))}
-    </div>
-  );
-}
+import { Icons } from "../ui/icons";
 
 type OpenSourceExperienceType = {
   contribution: OpenSourceContribution;
 };
 
-function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
+export default function OpenSourceExperienceItem({
+  contribution,
+}: OpenSourceExperienceType) {
   const referenceLabel =
     contribution.reference.type === "pull-request" ? "PR" : "Issue";
 

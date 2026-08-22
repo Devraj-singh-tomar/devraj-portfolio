@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { experience } from "@/data/experience";
-import OpenSourceExperience from "./open-source-experience";
+import OpenSourceContributionList from "../../contributions/open-source-contribution-list";
 import ProfessionalExperience from "./professional-experience";
 
 export default function Experience() {
@@ -24,7 +24,7 @@ export default function Experience() {
         </TabsContent>
 
         <TabsContent value="open-source" className="mt-1 w-full">
-          <OpenSourceExperience />
+          <OpenSourceContributionList featuredOnly />
         </TabsContent>
       </Tabs>
     </section>

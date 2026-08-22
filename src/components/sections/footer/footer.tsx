@@ -11,7 +11,7 @@ export default function Footer() {
         <ThemeToggle />
       </div>
 
-      <div className="overflow-hidden text-center py-3">
+      <div className="overflow-hidden text-center pt-6">
         <h2 className="select-none text-[3.5rem] font-bold tracking-wide text-muted-foreground mask-b-to-85%  sm:text-8xl md:text-9xl lg:text-[10rem]">
           DEVRAJ
         </h2>

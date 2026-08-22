@@ -79,4 +79,6 @@ export interface OpenSourceContribution {
   technologies: string[];
 
   date: string;
+
+  featured: boolean;
 }
