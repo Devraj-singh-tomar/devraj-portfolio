@@ -34,6 +34,17 @@ export default function ProjectCard({
       </p>
 
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-foreground">
+        {liveLink && (
+          <Link
+            href={liveLink}
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-1"
+          >
+            Live <ExternalLinkIcon size={12} />
+          </Link>
+        )}
+
         {githubLink && (
           <Link
             href={githubLink}
@@ -46,17 +57,6 @@ export default function ProjectCard({
             {typeof stars === "number" && stars > 0 && (
               <span className="text-zinc-500">{stars.toLocaleString()}</span>
             )}
-          </Link>
-        )}
-
-        {liveLink && (
-          <Link
-            href={liveLink}
-            target="_blank"
-            rel="noopener"
-            className="flex items-center gap-1"
-          >
-            Live <ExternalLinkIcon size={12} />
           </Link>
         )}
       </div>

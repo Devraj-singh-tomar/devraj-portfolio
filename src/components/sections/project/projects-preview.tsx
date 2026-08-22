@@ -1,7 +1,7 @@
 import Link from "next/link";
-import FeaturedProjects from "./featured-projects";
+import ProjectList from "./project-list";
 
-export default function Projects() {
+export default function ProjectsPreview() {
   return (
     <section className="-mx-6 border-t border-border px-6 py-10">
       <div className="flex items-baseline justify-between">
@@ -16,7 +16,9 @@ export default function Projects() {
         </Link>
       </div>
 
-      <FeaturedProjects />
+      <div className="mt-1">
+        <ProjectList featuredOnly />
+      </div>
     </section>
   );
 }

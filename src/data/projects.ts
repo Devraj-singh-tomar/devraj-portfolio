@@ -1,11 +1,4 @@
-export type Project = {
-  id: string;
-  title: string;
-  description: string;
-  impact?: string;
-  liveLink?: string;
-  githubLink?: string;
-};
+import { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
@@ -16,7 +9,10 @@ export const projects: Project[] = [
     impact: "12k+ downloads",
     liveLink: "https://www.bettershot.site",
     githubLink: "https://github.com/KartikLabhshetwar/better-shot",
+    featured: true,
+    stars: 20,
   },
+
   {
     id: "screenvideo",
     title: "ScreenVideo",
@@ -25,5 +21,26 @@ export const projects: Project[] = [
     impact: "12k+ downloads",
     liveLink: "https://www.bettershot.site",
     githubLink: "https://github.com/KartikLabhshetwar/better-shot",
+    featured: false,
+    stars: 1000,
+  },
+
+  {
+    id: "system-design-board",
+    title: "Collaborative Board",
+    description:
+      "A real-time multiplayer whiteboard for designing distributed systems.",
+    featured: true,
+    liveLink: "https://...",
+    githubLink: "https://github.com/...",
+  },
+
+  {
+    id: "engineering-diary",
+    title: "Engineering Diary",
+    description:
+      "A system for documenting engineering learning, architecture, and implementation decisions.",
+    githubLink: "https://github.com/...",
+    featured: false,
   },
 ];
