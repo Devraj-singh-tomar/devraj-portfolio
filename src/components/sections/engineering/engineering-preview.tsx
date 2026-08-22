@@ -19,28 +19,28 @@ export default function EngineeringPreview() {
         </Link>
       </div>
 
-      <Tabs defaultValue="account" className="flex mt-6 items-start">
+      <Tabs defaultValue="system-design" className="flex pt-6 items-start">
         <TabsList variant="line" className="w-full">
-          <TabsTrigger value="case-study">Case Study</TabsTrigger>
+          <TabsTrigger value="system-design">System Design</TabsTrigger>
 
           <div className="h-5 w-px bg-border" />
 
-          <TabsTrigger value="system-design">System Design</TabsTrigger>
+          <TabsTrigger value="case-study">Case Study</TabsTrigger>
 
           <div className="h-5 w-px bg-border" />
 
           <TabsTrigger value="article">Article</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="case-study" className="mt-2 w-full">
-          <CaseStudyList featuredOnly />
-        </TabsContent>
-
-        <TabsContent value="system-design" className="mt-2 w-full">
+        <TabsContent value="system-design" className="mt-1 w-full">
           <SystemDesignList featuredOnly />
         </TabsContent>
 
-        <TabsContent value="article" className="mt-2 w-full">
+        <TabsContent value="case-study" className="mt-1 w-full">
+          <CaseStudyList featuredOnly />
+        </TabsContent>
+
+        <TabsContent value="article" className="mt-1 w-full">
           <ArticleList featuredOnly />
         </TabsContent>
       </Tabs>

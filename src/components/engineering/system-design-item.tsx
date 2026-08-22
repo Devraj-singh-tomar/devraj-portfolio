@@ -35,7 +35,7 @@ export default function SystemDesignItem({
         </div>
 
         <div className="space-y-2">
-          <h2 className="text-lg font-semibold tracking-tight text-foreground">
+          <h2 className="text-[16px] font-semibold tracking-tight text-foreground">
             {systemDesign.title}
           </h2>
           <p className="max-w-2xl text-sm text-muted-foreground">

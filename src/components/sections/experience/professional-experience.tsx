@@ -35,7 +35,7 @@ export default function ProfessionalExperience({
   className,
 }: ProfessionalExperienceProps) {
   return (
-    <div className={cn("space-y-8", className)}>
+    <div className={cn(className)}>
       {experiences.map((experience) => (
         <ExperienceItem key={experience.id} experience={experience} />
       ))}
@@ -45,7 +45,7 @@ export default function ProfessionalExperience({
 
 function ExperienceItem({ experience }: ExperienceItemProps) {
   return (
-    <article className="space-y-5">
+    <article className="space-y-4 py-6">
       {/* Company */}
       <div className="flex items-center gap-3">
         <div className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted">

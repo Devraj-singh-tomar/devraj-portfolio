@@ -16,9 +16,7 @@ export default function ProjectsPreview() {
         </Link>
       </div>
 
-      <div className="mt-1">
-        <ProjectList featuredOnly />
-      </div>
+      <ProjectList featuredOnly />
     </section>
   );
 }

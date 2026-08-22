@@ -12,18 +12,18 @@ export default function Experience() {
         </h2>
       </div>
 
-      <Tabs defaultValue="account" className="flex mt-6 items-start">
+      <Tabs defaultValue="account" className="flex pt-6 items-start">
         <TabsList variant="line" className="w-full">
           <TabsTrigger value="professional">Professional</TabsTrigger>
           <div className="h-5 w-px bg-border" />
           <TabsTrigger value="open-source">Open Source</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="professional" className="mt-2 w-full">
+        <TabsContent value="professional" className="mt-1 w-full">
           <ProfessionalExperience experiences={experience} />
         </TabsContent>
 
-        <TabsContent value="open-source" className="mt-2 w-full">
+        <TabsContent value="open-source" className="mt-1 w-full">
           <OpenSourceExperience />
         </TabsContent>
       </Tabs>

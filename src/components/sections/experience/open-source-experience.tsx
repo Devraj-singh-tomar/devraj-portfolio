@@ -39,11 +39,14 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
         </div>
 
         <span
-          className={cn("capitalize relative text-xs text-muted-foreground")}
+          className={cn(
+            `${contribution.status === "merged" ? "text-emerald-600/85 dark:text-emerald-400/85" : contribution.status === "closed" ? "text-rose-600/85 dark:text-rose-400/85" : "text-sky-600/85 dark:text-sky-400/85"}`,
+            "capitalize relative text-xs text-muted-foreground",
+          )}
         >
           <span
             className={cn(
-              `${contribution.status === "merged" ? "bg-emerald-500 text-emerald-600 dark:text-emerald-400" : contribution.status === "closed" ? "bg-rose-500 text-rose-600 dark:text-rose-400" : "bg-sky-500 text-sky-600 dark:text-sky-400"}`,
+              `${contribution.status === "merged" ? "bg-emerald-500/85" : contribution.status === "closed" ? "bg-rose-500/85" : "bg-sky-500/85"}`,
               "absolute size-2 rounded-full -left-4 translate-y-1/2",
             )}
           />

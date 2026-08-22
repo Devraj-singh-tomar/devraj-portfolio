@@ -12,9 +12,9 @@ export default function CaseStudyItem({ caseStudy }: CaseStudyItemProps) {
     <article className="border-b border-border py-6 last:border-b-0">
       <div className="space-y-5">
         <div className="space-y-2">
-          <h2 className="text-lg font-semibold tracking-tight text-foreground">
+          <h3 className="text-[16px] font-semibold text-foreground">
             {caseStudy.title}
-          </h2>
+          </h3>
           <p className="max-w-2xl text-sm text-muted-foreground">
             {caseStudy.description}
           </p>
