@@ -14,7 +14,7 @@ const formatDate = (date: string) => {
 
 export default function ArticleItem({ article }: ArticleItemProps) {
   return (
-    <article className="border-b border-border py-6">
+    <article className="border-b border-border py-6 last:border-b-0">
       <div className="space-y-5">
         <div className="flex items-center justify-between gap-4">
           <h2 className="text-lg font-semibold tracking-tight text-foreground">

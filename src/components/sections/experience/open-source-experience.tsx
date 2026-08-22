@@ -26,7 +26,7 @@ function OpenSourceExperienceItem({ contribution }: OpenSourceExperienceType) {
     contribution.reference.type === "pull-request" ? "PR" : "Issue";
 
   return (
-    <article className="border-b border-border py-6">
+    <article className="border-b border-border py-6 last:border-b-0">
       <div className="flex items-center justify-between">
         <div className="flex flex-col">
           <p className="text-foreground text-sm font-semibold">

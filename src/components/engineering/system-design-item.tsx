@@ -22,7 +22,7 @@ export default function SystemDesignItem({
   systemDesign,
 }: SystemDesignItemProps) {
   return (
-    <article className="border-b border-border py-6">
+    <article className="border-b border-border py-6 last:border-b-0">
       <div className="space-y-5">
         <div className="flex items-center gap-4">
           <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">

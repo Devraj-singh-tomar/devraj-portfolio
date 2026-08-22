@@ -19,7 +19,7 @@ export default function ProjectCard({
   stars,
 }: ProjectCardProp) {
   return (
-    <div className="border-b border-border py-6">
+    <div className="border-b border-border py-6 last:border-b-0">
       <div className="flex items-baseline justify-between gap-3">
         <h3 className="min-w-0 text-foreground font-semibold">{title}</h3>
         {impact && (
