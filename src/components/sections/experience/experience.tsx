@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { experience } from "@/data/experience";
 import OpenSourceContributionList from "../../contributions/open-source-contribution-list";
 import ProfessionalExperience from "./professional-experience";
+import Link from "next/link";
 
 export default function Experience() {
   return (
@@ -12,7 +13,7 @@ export default function Experience() {
         </h2>
       </div>
 
-      <Tabs defaultValue="account" className="flex pt-6 items-start">
+      <Tabs defaultValue="professional" className="flex pt-6 items-start">
         <TabsList variant="line" className="w-full">
           <TabsTrigger value="professional">Professional</TabsTrigger>
           <div className="h-5 w-px bg-border" />
@@ -25,6 +26,15 @@ export default function Experience() {
 
         <TabsContent value="open-source" className="mt-1 w-full">
           <OpenSourceContributionList featuredOnly />
+
+          <div className="flex justify-center mt-6">
+            <Link
+              href="/contributions"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              View all contributions →
+            </Link>
+          </div>
         </TabsContent>
       </Tabs>
     </section>

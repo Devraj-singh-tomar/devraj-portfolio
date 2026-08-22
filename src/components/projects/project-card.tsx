@@ -33,13 +33,13 @@ export default function ProjectCard({
         {description}
       </p>
 
-      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-foreground">
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2  text-xs">
         {liveLink && (
           <Link
             href={liveLink}
             target="_blank"
             rel="noopener"
-            className="flex items-center gap-1"
+            className="text-xs flex items-center gap-1 text-foreground transition-colors hover:text-muted-foreground"
           >
             Live <ExternalLinkIcon size={12} />
           </Link>
@@ -54,6 +54,7 @@ export default function ProjectCard({
             className="inline-flex text-foreground transition-colors hover:text-muted-foreground items-center gap-1.5"
           >
             <Icons.github />
+
             {typeof stars === "number" && stars > 0 && (
               <span className="text-zinc-500">{stars.toLocaleString()}</span>
             )}

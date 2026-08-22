@@ -8,9 +8,9 @@ interface NavlinkProps {
 
 const navLinks: NavlinkProps[] = [
   { label: "Home", href: "/" },
-  { label: "Engineering", href: "/engineering" },
+  { label: "Contributions", href: "/contributions" },
   { label: "Projects", href: "/projects" },
-  { label: "Resume", href: "/" },
+  { label: "Engineering", href: "/engineering" },
 ];
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="flex items-center justify-between py-6">
       <ThemeToggle />
 
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm sm:gap-x-4">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs md:text-sm sm:gap-x-4">
         {navLinks.map(({ href, label }) => (
           <Link
             key={label}
