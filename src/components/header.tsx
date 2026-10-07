@@ -20,17 +20,17 @@ const navLinks = [
     name: "Blogs",
     href: "/blogs",
   },
-  {
-    name: "Sponsers",
-    href: "/sponsers",
-  },
+  // {
+  //   name: "Resume",
+  //   href: "/resume",
+  // },
 ];
 
 export default function Header() {
   const pathName = usePathname();
 
   return (
-    <header className="flex gap-3 items-center">
+    <header className="flex gap-4 items-center">
       {navLinks.map(({ href, name }) => (
         <Link
           key={href}
