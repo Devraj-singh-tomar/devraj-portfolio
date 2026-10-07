@@ -11,6 +11,7 @@ export function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon"
+      className={"rounded-full"}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <CgDarkMode className={`size-10 w-[1.3rem]`} />
