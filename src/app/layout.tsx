@@ -1,4 +1,7 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
@@ -27,7 +30,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <TooltipProvider delay={0}>
+            <main className="space-y-6">
+              <Header />
+
+              {children}
+
+              <Footer />
+            </main>
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>
