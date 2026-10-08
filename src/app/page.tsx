@@ -4,12 +4,12 @@ import { WritingSection } from "@/components/writing/writing-section";
 
 export default function Home() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <Hero />
 
-      <div className="">contribution sectoin</div>
-
       <ProjectsSection />
+
+      {/* <div className="">contribution sectoin</div> */}
 
       <WritingSection />
     </div>

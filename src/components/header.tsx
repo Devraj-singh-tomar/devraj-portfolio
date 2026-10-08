@@ -17,8 +17,8 @@ const navLinks = [
     href: "/projects",
   },
   {
-    name: "Blogs",
-    href: "/blogs",
+    name: "Writing",
+    href: "/writing",
   },
   // {
   //   name: "Resume",
@@ -30,12 +30,12 @@ export default function Header() {
   const pathName = usePathname();
 
   return (
-    <header className="flex gap-4 items-center">
+    <header className="flex gap-5 items-center">
       {navLinks.map(({ href, name }) => (
         <Link
           key={href}
           href={href}
-          className={`${pathName === href ? "bg-foreground/5" : "text-muted-foreground"} px-2 py-1 rounded-full text-sm hover:text-foreground `}
+          className={`${pathName === href ? "" : "text-muted-foreground"}  text-sm hover:text-foreground `}
         >
           {name}
         </Link>

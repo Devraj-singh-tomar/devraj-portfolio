@@ -4,13 +4,13 @@ import { HeroHeader } from "@/components/hero-header";
 
 export default function ProjectsPage() {
   return (
-    <div className="pb-12">
+    <div>
       <HeroHeader
         title="Projects"
         description=" Things I've built and shipped."
       />
 
-      <section className="mt-12">
+      <section className="mt-10">
         <div className="flex flex-col gap-8">
           {projects.map((project) => (
             <ProjectItem key={project.title} project={project} />

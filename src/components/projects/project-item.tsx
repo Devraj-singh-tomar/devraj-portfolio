@@ -1,5 +1,6 @@
 import { Project } from "@/config/projects";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 type ProjectItemProps = {
   project: Project;
@@ -8,20 +9,20 @@ type ProjectItemProps = {
 export function ProjectItem({ project }: ProjectItemProps) {
   return (
     <article className="group">
-      <h3 className="text-base leading-6 ">{project.title}</h3>
+      <h3 className="text-sm leading-5">{project.title}</h3>
 
-      <p className="mt-1 max-w-[34rem] text-sm leading-6 text-muted-foreground">
+      <p className="mt-1 max-w-[34rem] text-sm leading-5.5 text-muted-foreground">
         {project.description}
       </p>
 
-      <div className="mt-3 flex items-center gap-4 text-sm text-muted-foreground">
+      <div className="mt-2.5 flex items-center gap-3.5 text-sm text-muted-foreground">
         <Link
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-foreground hover:underline underline-offset-2"
+          className="hover:text-foreground"
         >
-          Github
+          <FaGithub className="size-4" />
         </Link>
 
         {project.live && (
@@ -29,7 +30,7 @@ export function ProjectItem({ project }: ProjectItemProps) {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className=" hover:text-foreground hover:underline underline-offset-3"
+            className=" hover:text-foreground"
           >
             Live
           </a>

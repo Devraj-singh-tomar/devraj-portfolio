@@ -10,7 +10,8 @@ export type Writing = {
 export const writings: Writing[] = [
   {
     title: "Your first article title",
-    description: "A short description explaining what the article is about.",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt cupiditate excepturi, odio officia ad minima illum nobis obcaecati fugit.",
     source: {
       name: "Medium",
       href: "https://medium.com/your-article",
@@ -19,7 +20,7 @@ export const writings: Writing[] = [
   {
     title: "Another article title",
     description:
-      "A short explanation of the idea, system, or lesson covered in the article.",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt cupiditate excepturi, odio officia ad minima illum nobis.",
     source: {
       name: "daily.dev",
       href: "https://app.daily.dev/posts/your-post",

@@ -6,12 +6,12 @@ export function WritingSection() {
   const featuredWriting = writings.slice(0, 5);
 
   return (
-    <section className="mt-16">
+    <section>
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-base font-normal">Writing</h2>
+        <h2 className="text-[18px] font-normal">Writing</h2>
 
         <Link
-          href="writing"
+          href="/writing"
           className="text-sm text-muted-foreground hover:text-foreground"
         >
           All writing

@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full mx-auto sm:max-w-xl pt-7 px-2 font-sans">
+      <body className="min-h-full mx-auto sm:max-w-xl pt-7 pb-10 px-5 sm:px-4 font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
