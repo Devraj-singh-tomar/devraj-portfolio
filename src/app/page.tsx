@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import { ProjectsSection } from "@/components/projects/projects-section";
 import { WritingSection } from "@/components/writing/writing-section";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
 
       <div className="">contribution sectoin</div>
 
-      <div className="">Project section</div>
+      <ProjectsSection />
 
       <WritingSection />
     </div>
