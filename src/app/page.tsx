@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import { WritingSection } from "@/components/writing/writing-section";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
 
       <div className="">Project section</div>
 
-      <div className="">blog/writing section</div>
+      <WritingSection />
     </div>
   );
 }
