@@ -19,10 +19,21 @@ export type ContributionWeek = {
   contributionDays: ContributionDay[];
 };
 
-export type TopRepository = {
-  name: string;
+export type OpenSourcePullRequest = {
+  number: number;
+  title: string;
   href: string;
-  commitCount: number;
+  createdAt: string;
+  state: "OPEN" | "CLOSED";
+  merged: boolean;
+};
+
+export type OpenSourceRepository = {
+  name: string;
+  fullName: string;
+  href: string;
+  pullRequestCount: number;
+  pullRequests: OpenSourcePullRequest[];
 };
 
 export type GitHubContributionData = {
@@ -30,7 +41,7 @@ export type GitHubContributionData = {
   throughDate: string;
   totalContributions: number;
   weeks: ContributionWeek[];
-  topRepositories: TopRepository[];
+  openSourceRepositories: OpenSourceRepository[];
 };
 
 type GitHubGraphQLResponse = {
@@ -41,13 +52,31 @@ type GitHubGraphQLResponse = {
           totalContributions: number;
           weeks: ContributionWeek[];
         };
-        commitContributionsByRepository: {
+        pullRequestContributionsByRepository: {
           repository: {
+            name: string;
             nameWithOwner: string;
             url: string;
+            isPrivate: boolean;
+            owner: {
+              login: string;
+            };
           };
+
           contributions: {
             totalCount: number;
+
+            nodes: {
+              occurredAt: string;
+
+              pullRequest: {
+                number: number;
+                title: string;
+                url: string;
+                state: "OPEN" | "CLOSED";
+                merged: boolean;
+              };
+            }[];
           };
         }[];
       };
@@ -78,15 +107,33 @@ const CONTRIBUTIONS_QUERY = `
           }
         }
 
-        commitContributionsByRepository(maxRepositories: 5) {
-          repository {
-            nameWithOwner
-            url
-          }
-          contributions(first: 1) {
-            totalCount
-          }
-        }
+        pullRequestContributionsByRepository(maxRepositories: 25) {
+  repository {
+    name
+    nameWithOwner
+    url
+    isPrivate
+    owner {
+      login
+    }
+  }
+
+  contributions(first: 20) {
+    totalCount
+
+    nodes {
+      occurredAt
+
+      pullRequest {
+        number
+        title
+        url
+        state
+        merged
+      }
+    }
+  }
+}
       }
     }
   }
@@ -149,18 +196,49 @@ export async function getGitHubContributions(): Promise<GitHubContributionData |
       return null;
     }
 
+    const username = siteConfig.githubUsername.toLowerCase();
+
+    const openSourceRepositories =
+      collection.pullRequestContributionsByRepository
+        .filter(
+          ({ repository }) =>
+            !repository.isPrivate &&
+            repository.owner.login.toLowerCase() !== username,
+        )
+        .map(({ repository, contributions }) => {
+          const pullRequests = contributions.nodes
+            .map(({ occurredAt, pullRequest }) => ({
+              number: pullRequest.number,
+              title: pullRequest.title,
+              href: pullRequest.url,
+              createdAt: occurredAt,
+              state: pullRequest.state,
+              merged: pullRequest.merged,
+            }))
+            .sort(
+              (a, b) =>
+                new Date(b.createdAt).getTime() -
+                new Date(a.createdAt).getTime(),
+            );
+
+          return {
+            name: repository.name,
+            fullName: repository.nameWithOwner,
+            href: repository.url,
+            pullRequestCount: contributions.totalCount,
+            pullRequests,
+          };
+        })
+        .filter((repository) => repository.pullRequests.length > 0)
+        .sort((a, b) => b.pullRequestCount - a.pullRequestCount)
+        .slice(0, 5);
+
     return {
       year,
       throughDate: today,
       totalContributions: collection.contributionCalendar.totalContributions,
       weeks: collection.contributionCalendar.weeks,
-      topRepositories: collection.commitContributionsByRepository.map(
-        ({ repository, contributions }) => ({
-          name: repository.nameWithOwner,
-          href: repository.url,
-          commitCount: contributions.totalCount,
-        }),
-      ),
+      openSourceRepositories,
     };
   } catch (error) {
     console.error("Unable to fetch GitHub contributions:", error);

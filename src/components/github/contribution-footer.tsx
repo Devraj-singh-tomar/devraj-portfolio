@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ExternalLink } from "lucide-react";
-import type { TopRepository } from "@/lib/github-contributions";
-import { BsGithub } from "react-icons/bs";
+import { ChevronDown, ExternalLink, GitPullRequest } from "lucide-react";
+
+import type { OpenSourceRepository } from "@/lib/github-contributions";
 
 type ContributionFooterProps = {
-  repositories: TopRepository[];
+  repositories: OpenSourceRepository[];
   profileUrl: string;
 };
 
@@ -16,68 +16,185 @@ export function ContributionFooter({
 }: ContributionFooterProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [expandedRepositories, setExpandedRepositories] = useState<Set<string>>(
+    () => new Set(),
+  );
+
+  function toggleRepository(fullName: string) {
+    setExpandedRepositories((current) => {
+      const next = new Set(current);
+
+      if (next.has(fullName)) {
+        next.delete(fullName);
+      } else {
+        next.add(fullName);
+      }
+
+      return next;
+    });
+  }
+
   return (
-    <div className="mt-4 rounded-[1.5rem] bg-[#111113] p-3 sm:px-5 sm:py-4">
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-sm text-[#e5e5e7] sm:text-base">
+    <section className="mt-4 overflow-hidden rounded-[1.5rem] bg-[#111113] p-3 sm:p-4">
+      {/* Main disclosure */}
+      <button
+        type="button"
+        onClick={() => setIsOpen((open) => !open)}
+        aria-expanded={isOpen}
+        className="flex w-full items-center justify-between gap-4 text-left"
+      >
+        <span className="text-sm text-[#e5e5e7] sm:text-base">
           Top contributions in:
-        </p>
+        </span>
 
-        <div className="flex shrink-0 items-center gap-2">
-          <a
-            href={profileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open GitHub profile"
-            className="flex size-9 items-center justify-center rounded-full bg-[#c9adff] text-[#19151f] transition-opacity hover:opacity-80"
-          >
-            <BsGithub className="size-4" />
-          </a>
+        <span className="flex shrink-0 items-center gap-2">
+          {/* Preview the first two repository initials */}
+          <span className="flex -space-x-1.5">
+            {repositories.slice(0, 2).map((repository, index) => (
+              <span
+                key={repository.fullName}
+                title={repository.fullName}
+                className={`flex size-9 items-center justify-center rounded-full border-2 border-[#111113] text-xs font-medium ${
+                  index === 0
+                    ? "bg-[#c9adff] text-[#20172c]"
+                    : "bg-[#29292c] text-[#e5e5e7]"
+                }`}
+              >
+                {repository.name.charAt(0).toUpperCase()}
+              </span>
+            ))}
+          </span>
 
-          <button
-            type="button"
-            onClick={() => setIsOpen((open) => !open)}
-            aria-label={
-              isOpen
-                ? "Hide top contributing repositories"
-                : "Show top contributing repositories"
-            }
-            aria-expanded={isOpen}
-            disabled={repositories.length === 0}
-            className="flex size-9 items-center justify-center rounded-full border border-white/15 text-muted-foreground transition-colors hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
-          >
+          <span className="flex size-9 items-center justify-center rounded-full border border-white/15 text-[#a1a1a6] transition-colors hover:text-[#e5e5e7]">
             <ChevronDown
-              className={`size-5 transition-transform ${
+              className={`size-5 transition-transform duration-200 ${
                 isOpen ? "rotate-180" : ""
               }`}
             />
-          </button>
-        </div>
-      </div>
+          </span>
+        </span>
+      </button>
 
-      {isOpen && repositories.length > 0 && (
-        <ul className="mt-3 space-y-1 border-t border-white/10 pt-3">
-          {repositories.map((repository) => (
-            <li key={repository.href}>
+      {/* Expanded repository panel */}
+      {isOpen && (
+        <div className="mt-4 border-t border-white/10 pt-3">
+          {repositories.length === 0 ? (
+            <div className="py-6 text-sm text-[#a1a1a6]">
+              No public external pull requests were found for this year.
               <a
-                href={repository.href}
+                href={profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between gap-4 rounded-lg px-2 py-2 text-sm transition-colors hover:bg-white/5"
+                className="ml-1 text-[#e5e5e7] underline-offset-4 hover:underline"
               >
-                <span className="truncate text-[#e5e5e7]">
-                  {repository.name}
-                </span>
-
-                <span className="flex shrink-0 items-center gap-1.5 text-muted-foreground">
-                  {repository.commitCount.toLocaleString("en-US")} commits
-                  <ExternalLink className="size-3.5" />
-                </span>
+                View GitHub
               </a>
-            </li>
-          ))}
-        </ul>
+            </div>
+          ) : (
+            <div className="divide-y divide-white/[0.07]">
+              {repositories.map((repository) => {
+                const repositoryExpanded = expandedRepositories.has(
+                  repository.fullName,
+                );
+
+                return (
+                  <div key={repository.fullName} className="py-1">
+                    {/* Repository row */}
+                    <button
+                      type="button"
+                      onClick={() => toggleRepository(repository.fullName)}
+                      aria-expanded={repositoryExpanded}
+                      className="flex w-full items-center gap-3 rounded-xl px-2 py-3 text-left transition-colors hover:bg-white/[0.035]"
+                    >
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#29292c] text-[#d4d4d8]">
+                        <GitPullRequest className="size-4" />
+                      </span>
+
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-sm font-medium text-[#e5e5e7]">
+                          {repository.name}
+                        </span>
+
+                        <span className="block truncate text-xs text-[#85858b]">
+                          {repository.fullName}
+                        </span>
+                      </span>
+
+                      <span className="shrink-0 text-xs text-[#a1a1a6] sm:text-sm">
+                        {repository.pullRequestCount}{" "}
+                        {repository.pullRequestCount === 1 ? "PR" : "PRs"}
+                      </span>
+
+                      <ChevronDown
+                        className={`size-4 shrink-0 text-[#85858b] transition-transform duration-200 ${
+                          repositoryExpanded ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {/* Nested pull requests */}
+                    {repositoryExpanded && (
+                      <div className="ml-6 border-l border-white/10 pb-3 pl-4 sm:ml-7">
+                        <div className="space-y-1">
+                          {repository.pullRequests.map((pr) => {
+                            const status = pr.merged
+                              ? "Merged"
+                              : pr.state === "OPEN"
+                                ? "Open"
+                                : "Closed";
+
+                            const statusColor = pr.merged
+                              ? "text-emerald-400"
+                              : pr.state === "OPEN"
+                                ? "text-sky-400"
+                                : "text-[#85858b]";
+
+                            return (
+                              <a
+                                key={pr.href}
+                                href={pr.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-white/[0.04]"
+                              >
+                                <span className="mt-0.5 shrink-0 font-mono text-xs text-[#85858b]">
+                                  #{pr.number}
+                                </span>
+
+                                <span className="min-w-0 flex-1">
+                                  <span className="block text-sm leading-5 text-[#d4d4d8] transition-colors group-hover:text-white">
+                                    {pr.title}
+                                  </span>
+
+                                  <span
+                                    className={`mt-1 block text-xs ${statusColor}`}
+                                  >
+                                    {status}
+                                  </span>
+                                </span>
+
+                                <ExternalLink className="mt-1 size-3.5 shrink-0 text-[#66666c] opacity-0 transition-opacity group-hover:opacity-100" />
+                              </a>
+                            );
+                          })}
+                        </div>
+
+                        {repository.pullRequestCount >
+                          repository.pullRequests.length && (
+                          <p className="px-2 pt-2 text-xs text-[#85858b]">
+                            Showing the latest {repository.pullRequests.length}{" "}
+                            of {repository.pullRequestCount} pull requests.
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
       )}
-    </div>
+    </section>
   );
 }

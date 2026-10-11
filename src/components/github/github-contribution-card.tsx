@@ -146,7 +146,7 @@ export async function GitHubContributionCard() {
       />
 
       <ContributionFooter
-        repositories={data.topRepositories}
+        repositories={data.openSourceRepositories}
         profileUrl={siteConfig.socials.github}
       />
     </section>
