@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
     company: "Memo0",
     href: "https://mem0.ai",
     period: "Mar 2026 to Present",
-    logo: "/experience/company-name.svg",
+    logo: "/experience/google.jpg",
     roles: [
       {
         title: "Software Engineer",
@@ -29,7 +29,7 @@ export const experiences: Experience[] = [
     company: "Google",
     href: "https://Google.com",
     period: "Mar 2026 to Present",
-    logo: "/experience/another-company.svg",
+    logo: "/experience/google.jpg",
     roles: [
       {
         title: "Software Engineering Intern",

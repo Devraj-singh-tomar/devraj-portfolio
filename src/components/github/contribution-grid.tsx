@@ -14,11 +14,11 @@ type ContributionGridProps = {
 };
 
 const contributionColors: Record<ContributionLevel, string> = {
-  NONE: "#171918",
-  FIRST_QUARTILE: "#0e4429",
-  SECOND_QUARTILE: "#006d32",
-  THIRD_QUARTILE: "#26a641",
-  FOURTH_QUARTILE: "#39d353",
+  NONE: "bg-github-contribution-empty",
+  FIRST_QUARTILE: "bg-github-contribution-level-1",
+  SECOND_QUARTILE: "bg-github-contribution-level-2",
+  THIRD_QUARTILE: "bg-github-contribution-level-3",
+  FOURTH_QUARTILE: "bg-github-contribution-level-4",
 };
 
 export function ContributionGrid({
@@ -96,7 +96,7 @@ export function ContributionGrid({
                   <Tooltip key={day.date}>
                     <TooltipTrigger
                       aria-label={`${countLabel} on ${dateLabel}`}
-                      className="block size-[clamp(9px,1.7vw,12px)] cursor-default rounded-[3px] border-0 p-0 transition-opacity hover:opacity-75"
+                      className={`${contributionColors[day.contributionLevel] ?? contributionColors.NONE} block size-[clamp(9px,1.7vw,12px)] cursor-default rounded-[3px] border-0 p-0 transition-opacity hover:opacity-75`}
                       style={{
                         backgroundColor:
                           contributionColors[day.contributionLevel] ??

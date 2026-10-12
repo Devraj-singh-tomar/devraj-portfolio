@@ -45,6 +45,18 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  --color-github-card-background: var(--github-card-background);
+  --color-github-footer-background: var(--github-footer-background);
+
+  --color-github-contribution-empty: var(--github-contribution-empty);
+  --color-github-contribution-level-1: var(--github-contribution-level-1);
+  --color-github-contribution-level-2: var(--github-contribution-level-2);
+  --color-github-contribution-level-3: var(--github-contribution-level-3);
+  --color-github-contribution-level-4: var(--github-contribution-level-4);
+
+  --color-github-repo-primary: var(--github-repo-primary);
+  --color-github-repo-primary-foreground: var(--github-repo-primary-foreground);
 }
 
 :root {
@@ -80,6 +92,19 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* GitHub contribution graph — light theme */
+  --github-card-background: #f3f3f5;
+  --github-footer-background: #e8e8ec;
+
+  --github-contribution-empty: #e3e5e8;
+  --github-contribution-level-1: #aceebb;
+  --github-contribution-level-2: #4ac26b;
+  --github-contribution-level-3: #2da44e;
+  --github-contribution-level-4: #116329;
+
+  --github-repo-primary: #d8bfff;
+  --github-repo-primary-foreground: #35215a;
 }
 
 .dark {
@@ -114,6 +139,19 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* GitHub contribution graph — dark theme */
+  --github-card-background: #050506;
+  --github-footer-background: #111113;
+
+  --github-contribution-empty: #171918;
+  --github-contribution-level-1: #0e4429;
+  --github-contribution-level-2: #006d32;
+  --github-contribution-level-3: #26a641;
+  --github-contribution-level-4: #39d353;
+
+  --github-repo-primary: #c9adff;
+  --github-repo-primary-foreground: #20172c;
 }
 
 @layer base {

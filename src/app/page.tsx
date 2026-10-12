@@ -10,7 +10,6 @@ export default function Home() {
 
       <ProjectsSection />
 
-      {/* <div className="">contribution sectoin</div> */}
       <GitHubContributionCard />
 
       <WritingSection />

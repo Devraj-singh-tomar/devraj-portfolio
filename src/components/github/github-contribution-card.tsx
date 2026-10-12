@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { getGitHubContributions } from "@/lib/github-contributions";
+import Link from "next/link";
 import { ContributionFooter } from "./contribution-footer";
 import { ContributionGrid } from "./contribution-grid";
 
@@ -9,7 +9,7 @@ export async function GitHubContributionCard() {
 
   if (!data) {
     return (
-      <section className="mt-8 rounded-[2rem] bg-[#080809] p-5">
+      <section className="mt-8 rounded-[2rem] bg-github-card-background p-5">
         <p className="text-sm text-muted-foreground">
           GitHub contributions are currently unavailable.
         </p>
@@ -29,9 +29,9 @@ export async function GitHubContributionCard() {
   return (
     <section
       aria-label="GitHub contribution activity"
-      className="mt-8 rounded-[2rem] bg-[#050506] p-4 sm:p-6"
+      className="rounded-[2rem] bg-github-card-background sm:p-5"
     >
-      <h2 className="mb-5 px-1 text-[17px] font-normal leading-6 text-[#e5e5e7] sm:text-lg">
+      <h2 className="mb-5 font-normal leading-6 text-foreground text-[16px]">
         {data.totalContributions.toLocaleString("en-US")} contributions in{" "}
         {data.year}
       </h2>
