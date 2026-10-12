@@ -10,7 +10,7 @@ export default function Hero() {
         Currently building{" "}
         <a
           href={siteConfig.currentlyBuilding.href}
-          className="text-foreground underline underline-offset-2"
+          className="text-foreground underline underline-offset-[2.5px] decoration-wavy"
         >
           {siteConfig.currentlyBuilding.name}
         </a>

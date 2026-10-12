@@ -85,7 +85,7 @@ export function ContributionFooter({
                 href={profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-1 text-[#e5e5e7] underline-offset-4 hover:underline"
+                className="ml-1 text-[#e5e5e7] hover:underline underline-offset-[2.5px] decoration-wavy"
               >
                 View GitHub
               </a>

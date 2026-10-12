@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="flex gap-4 pt-6">
       <Tooltip>
-        <TooltipTrigger className="text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline hover:underline-offset-3">
+        <TooltipTrigger className="text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy">
           Email
         </TooltipTrigger>
 
@@ -56,7 +56,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             key={name}
             href={href}
-            className={`text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline hover:underline-offset-3 `}
+            className={`text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy `}
           >
             {name}
           </Link>

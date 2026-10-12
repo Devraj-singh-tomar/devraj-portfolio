@@ -24,7 +24,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
       {/* Company, roles, and dates */}
       <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-3">
         {/* Company heading and separator */}
-        <div className="flex hover:underline underline-offset-3 decoration-wavy  min-w-0 items-center gap-3">
+        <div className="flex hover:underline underline-offset-[2.5px] decoration-wavy  min-w-0 items-center gap-3">
           {experience.href ? (
             <a
               href={experience.href}

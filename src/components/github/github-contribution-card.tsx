@@ -18,7 +18,7 @@ export async function GitHubContributionCard() {
           href={siteConfig.socials.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-block text-sm text-foreground underline-offset-4 hover:underline"
+          className="mt-3 inline-block text-sm text-foreground hover:underline underline-offset-[2.5px] decoration-wavy"
         >
           View GitHub profile
         </Link>

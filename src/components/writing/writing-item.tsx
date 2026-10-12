@@ -13,7 +13,7 @@ export function WritingItem({ writing }: WritingItemProps) {
       rel="noopener noreferrer"
       className="inline text-foreground "
     >
-      <h3 className="text-sm leading-5 hover:underline underline-offset-2">
+      <h3 className="text-sm leading-5 hover:underline underline-offset-[2.5px] decoration-wavy">
         {writing.title}
       </h3>
 

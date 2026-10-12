@@ -35,7 +35,7 @@ export default function Header() {
         <Link
           key={href}
           href={href}
-          className={`${pathName === href ? "" : "text-muted-foreground"}  text-sm hover:text-foreground `}
+          className={`${pathName === href ? "underline underline-offset-[2.5px] decoration-wavy" : "text-muted-foreground"}  text-sm hover:text-foreground `}
         >
           {name}
         </Link>
