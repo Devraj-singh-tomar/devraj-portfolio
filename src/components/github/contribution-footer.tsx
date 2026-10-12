@@ -35,7 +35,7 @@ export function ContributionFooter({
   }
 
   return (
-    <section className="mt-3 overflow-hidden rounded-[1.5rem] bg-github-footer-background p-3 sm:p-2">
+    <section className="mt-3 overflow-hidden rounded-[1.5rem] bg-github-footer-background py-2 px-4">
       {/* Main disclosure */}
       <button
         type="button"
@@ -54,7 +54,7 @@ export function ContributionFooter({
               <span
                 key={repository.fullName}
                 title={repository.fullName}
-                className={`flex size-9 items-center justify-center rounded-full border-2 border-github-footer-background text-xs font-medium ${
+                className={`flex size-6 sm:size-7 items-center justify-center rounded-full border-2 border-github-footer-background text-xs font-medium ${
                   index === 0
                     ? "bg-github-repo-primary text-muted"
                     : "bg-github-repo-primary-foreground text-muted-foreground"
@@ -91,7 +91,7 @@ export function ContributionFooter({
               </a>
             </div>
           ) : (
-            <div className="divide-y divide-border">
+            <div className="divide- divide-border">
               {repositories.map((repository) => {
                 const repositoryExpanded = expandedRepositories.has(
                   repository.fullName,
@@ -120,7 +120,7 @@ export function ContributionFooter({
                         </span>
                       </span>
 
-                      <span className="shrink-0 text-xs text-muted-foreground sm:text-sm">
+                      <span className="shrink-0 text-xs text-muted-foreground">
                         {repository.pullRequestCount}{" "}
                         {repository.pullRequestCount === 1 ? "PR" : "PRs"}
                       </span>
@@ -134,7 +134,7 @@ export function ContributionFooter({
 
                     {/* Nested pull requests */}
                     {repositoryExpanded && (
-                      <div className="ml-6 border-l border-border pb-3 pl-4 sm:ml-7">
+                      <div className="pb-3">
                         <div className="space-y-1">
                           {repository.pullRequests.map((pr) => {
                             const status = pr.merged
@@ -162,7 +162,7 @@ export function ContributionFooter({
                                 </span>
 
                                 <span className="min-w-0 flex-1">
-                                  <span className="block text-sm leading-5 text-foreground transition-colors group-hover:text-white">
+                                  <span className="block text-sm leading-5 text-foreground transition-colors">
                                     {pr.title}
                                   </span>
 
