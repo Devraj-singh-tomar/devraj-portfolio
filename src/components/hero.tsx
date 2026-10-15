@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { HeroHeader } from "./hero-header";
+import Footer from "./footer";
 
 export default function Hero() {
   return (
@@ -18,6 +19,8 @@ export default function Hero() {
         development, real-time communication, AI-powered applications, and
         backend infrastructure.
       </p>
+
+      <Footer />
     </section>
   );
 }
