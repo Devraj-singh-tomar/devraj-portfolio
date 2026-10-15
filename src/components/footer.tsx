@@ -1,67 +1,22 @@
-"use client";
-
 import { siteConfig } from "@/config/site";
-import { CopyIcon } from "lucide-react";
-import Link from "next/link";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-
-const footerLinks = [
-  {
-    name: "GitHub",
-    href: siteConfig.socials.github,
-  },
-  {
-    name: "X",
-    href: siteConfig.socials.x,
-  },
-  {
-    name: "LinkedIn",
-    href: siteConfig.socials.linkedin,
-  },
-  {
-    name: "Book a meet",
-    href: siteConfig.links.calendar,
-  },
-];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="flex gap-4 pt-6">
-      <Tooltip>
-        <TooltipTrigger className="text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy">
-          Email
-        </TooltipTrigger>
+    <footer className="mt-20 flex flex-col items-center gap-3 border-t border-border/60 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <p>
+        © {year} {siteConfig.name}. All rights reserved.
+      </p>
 
-        <TooltipContent className="flex items-center justify-center">
-          <p className="font-semibold">{siteConfig.email}</p>
-
-          <button
-            type="button"
-            title="Copy email"
-            aria-label="Copy email address"
-            onClick={() => navigator.clipboard.writeText(siteConfig.email)}
-            className="cursor-pointer"
-          >
-            <CopyIcon className="size-3.5" />
-          </button>
-        </TooltipContent>
-      </Tooltip>
-
-      {footerLinks.map(({ href, name }) => {
-        if (!href) return null;
-
-        return (
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            key={name}
-            href={href}
-            className={`text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy `}
-          >
-            {name}
-          </Link>
-        );
-      })}
+      <p className="flex items-center gap-1.5">
+        <span
+          aria-hidden="true"
+          className="size-1.5 rounded-full animate-pulse bg-emerald-500"
+        />
+        <span className="text-foreground">6162356</span>
+        <span>visitor's</span>
+      </p>
     </footer>
   );
 }

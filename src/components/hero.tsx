@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { HeroHeader } from "./hero-header";
-import Footer from "./footer";
+import SocialLinks from "./social-links";
 
 export default function Hero() {
   return (
@@ -20,7 +20,7 @@ export default function Hero() {
         backend infrastructure.
       </p>
 
-      <Footer />
+      <SocialLinks />
     </section>
   );
 }
