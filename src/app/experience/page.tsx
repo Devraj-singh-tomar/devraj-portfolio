@@ -1,6 +1,13 @@
 import { ExperienceItem } from "@/components/experience/experience-item";
 import { HeroHeader } from "@/components/hero-header";
 import { experiences } from "@/config/experience";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description:
+    "Explore my software development experience, projects, and practical work in full-stack development, real-time systems, and AI.",
+};
 
 export default function ExperiencePage() {
   return (

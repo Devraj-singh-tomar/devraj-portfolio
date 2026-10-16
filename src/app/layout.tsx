@@ -15,11 +15,11 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
-    default: "Devraj Singh Tomar",
+    default: "Devraj Singh Tomar - Full-Stack Software Engineer",
     template: "%s | Devraj Singh Tomar",
   },
   description:
-    "Developer portfolio of Devraj Singh Tomar, featuring full-stack projects, real-time systems, AI, and engineering writing.",
+    "I build full-stack products focused on real-time systems, AI, and reliable web infrastructure. Explore my projects and technical writing.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -29,10 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body
-        className="min-h-dvh font-sans"
-        // className="min-h-full mx-auto sm:max-w-xl pt-7 pb-10 px-5 sm:px-4 font-sans"
-      >
+      <body className="min-h-dvh font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

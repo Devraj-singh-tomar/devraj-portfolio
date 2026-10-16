@@ -1,6 +1,13 @@
-import { projects } from "@/config/projects";
-import { ProjectItem } from "@/components/projects/project-item";
 import { HeroHeader } from "@/components/hero-header";
+import { ProjectItem } from "@/components/projects/project-item";
+import { projects } from "@/config/projects";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Explore full-stack projects focused on real-time systems, AI, and web infrastructure.",
+};
 
 export default function ProjectsPage() {
   return (

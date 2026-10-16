@@ -11,13 +11,13 @@ export function WritingItem({ writing }: WritingItemProps) {
       href={writing.source.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline text-foreground "
+      className="group inline text-foreground"
     >
-      <h3 className="text-sm leading-5 hover:underline underline-offset-[2.5px] decoration-wavy">
+      <h3 className="text-sm leading-5 group-hover:underline underline-offset-[2.5px] decoration-wavy">
         {writing.title}
       </h3>
 
-      <p className="mt-1 text-sm leading-5.5 text-muted-foreground max-w-[34rem]">
+      <p className="mt-1 text-sm leading-5.5 text-muted-foreground max-w-136">
         {writing.description}
       </p>
     </Link>

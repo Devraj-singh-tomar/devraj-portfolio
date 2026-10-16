@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import type {
   ContributionLevel,
   ContributionWeek,
 } from "@/lib/github-contributions";
+import { useEffect, useRef } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type ContributionGridProps = {

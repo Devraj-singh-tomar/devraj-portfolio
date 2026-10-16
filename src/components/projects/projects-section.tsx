@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { projects } from "@/config/projects";
+import Link from "next/link";
 import { ProjectItem } from "./project-item";
 
 export function ProjectsSection() {

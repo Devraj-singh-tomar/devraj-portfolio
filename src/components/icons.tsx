@@ -4,7 +4,6 @@ type IconProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
-/* Gmail */
 export function Gmail({ size = 20, className, ...props }: IconProps) {
   return (
     <svg
@@ -22,13 +21,12 @@ export function Gmail({ size = 20, className, ...props }: IconProps) {
       focusable="false"
       {...props}
     >
-      <rect x="3" y="5" width="18" height="14" rx="2.5" />
-      <path d="m4 7 8 6 8-6" />
+      <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+      <path d="m3.5 6 8.5 6.5L20.5 6" />
     </svg>
   );
 }
 
-/* GitHub */
 export function Github({ size = 20, className, ...props }: IconProps) {
   return (
     <svg
@@ -51,7 +49,6 @@ export function Github({ size = 20, className, ...props }: IconProps) {
   );
 }
 
-/* LinkedIn */
 export function Linkedin({ size = 20, className, ...props }: IconProps) {
   return (
     <svg
@@ -70,7 +67,6 @@ export function Linkedin({ size = 20, className, ...props }: IconProps) {
   );
 }
 
-/* X */
 export function X({ size = 20, className, ...props }: IconProps) {
   return (
     <svg

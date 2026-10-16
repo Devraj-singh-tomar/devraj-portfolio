@@ -93,7 +93,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* GitHub contribution graph — light theme */
+  /* GitHub contribution graph - light theme */
   --github-card-background: #f3f3f5;
   --github-footer-background: #e8e8ec;
 
@@ -140,7 +140,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 
-  /* GitHub contribution graph — dark theme */
+  /* GitHub contribution graph - dark theme */
   --github-card-background: #050506;
   --github-footer-background: #111113;
 

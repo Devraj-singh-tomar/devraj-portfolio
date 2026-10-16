@@ -1,5 +1,5 @@
-import { Fragment } from "react";
 import type { Experience } from "@/config/experience";
+import { Fragment } from "react";
 
 type ExperienceItemProps = {
   experience: Experience;
@@ -7,7 +7,7 @@ type ExperienceItemProps = {
 
 export function ExperienceItem({ experience }: ExperienceItemProps) {
   return (
-    <article className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-x-3 sm:gap-x-4">
+    <article className="group grid grid-cols-[1.75rem_minmax(0,1fr)] gap-x-3 sm:gap-x-4">
       {/* Company logo */}
       <div className="flex justify-center pt-0.5">
         {experience.logo ? (
@@ -24,7 +24,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
       {/* Company, roles, and dates */}
       <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-3">
         {/* Company heading and separator */}
-        <div className="flex hover:underline underline-offset-[2.5px] decoration-wavy  min-w-0 items-center gap-3">
+        <div className="flex group-hover:underline underline-offset-[2.5px] decoration-wavy min-w-0 items-center gap-3">
           {experience.href ? (
             <a
               href={experience.href}

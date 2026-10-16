@@ -1,6 +1,13 @@
 import { HeroHeader } from "@/components/hero-header";
 import { WritingItem } from "@/components/writing/writing-item";
 import { writings } from "@/config/writing";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "Technical articles and engineering notes about full-stack development, AI, and distributed systems.",
+};
 
 export default function WritingPage() {
   return (

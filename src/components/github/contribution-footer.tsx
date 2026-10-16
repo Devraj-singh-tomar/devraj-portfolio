@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import type { OpenSourceRepository } from "@/lib/github-contributions";
+import { useState } from "react";
 import { BiChevronDown, BiGitPullRequest } from "react-icons/bi";
 import { HiExternalLink } from "react-icons/hi";
 

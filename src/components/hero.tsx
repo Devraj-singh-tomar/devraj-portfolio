@@ -7,7 +7,7 @@ export default function Hero() {
     <section>
       <HeroHeader title={siteConfig.name} description={siteConfig.tagline} />
 
-      <p className="mt-5 max-w-136 text-sm leading-6 text-muted-foreground">
+      <p className="mt-3 max-w-136 text-sm leading-6 text-muted-foreground">
         Currently building{" "}
         <a
           href={siteConfig.currentlyBuilding.href}
