@@ -43,7 +43,7 @@ export function ContributionGrid({
       className="scrollbar-none w-full overflow-x-scroll pb-1"
       aria-label={`GitHub contributions for ${year}`}
     >
-      <div className="flex w-max gap-[3px]">
+      <div className="flex w-max gap-0.75">
         {weeks.map((week, weekIndex) => {
           const daysByWeekday = new Map(
             week.contributionDays.map((day) => [day.weekday, day] as const),
@@ -96,7 +96,7 @@ export function ContributionGrid({
                   <Tooltip key={day.date}>
                     <TooltipTrigger
                       aria-label={`${countLabel} on ${dateLabel}`}
-                      className={`${contributionColors[day.contributionLevel] ?? contributionColors.NONE} block size-[clamp(9px,1.7vw,12px)] cursor-default rounded-full border-0 p-0 transition-opacity hover:opacity-75`}
+                      className={`${contributionColors[day.contributionLevel] ?? contributionColors.NONE} block size-[clamp(9px,1.7vw,12px)] cursor-default rounded border-0 p-0 transition-opacity hover:opacity-75`}
                       style={{
                         backgroundColor:
                           contributionColors[day.contributionLevel] ??

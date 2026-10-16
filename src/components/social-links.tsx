@@ -1,8 +1,8 @@
 "use client";
 
 import { siteConfig } from "@/config/site";
-import { CopyIcon } from "lucide-react";
 import Link from "next/link";
+import { BiCopy } from "react-icons/bi";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 const socialLinks = [
@@ -28,7 +28,7 @@ export default function SocialLinks() {
   return (
     <footer className="flex gap-4 pt-6">
       <Tooltip>
-        <TooltipTrigger className="text-muted-foreground text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy">
+        <TooltipTrigger className="text-foreground text-sm hover:underline underline-offset-[2.5px] decoration-wavy">
           Email
         </TooltipTrigger>
 
@@ -42,7 +42,7 @@ export default function SocialLinks() {
             onClick={() => navigator.clipboard.writeText(siteConfig.email)}
             className="cursor-pointer"
           >
-            <CopyIcon className="size-3.5" />
+            <BiCopy className="size-3.5" />
           </button>
         </TooltipContent>
       </Tooltip>
@@ -56,7 +56,7 @@ export default function SocialLinks() {
             rel="noopener noreferrer"
             key={name}
             href={href}
-            className={`text-muted-foreground text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy `}
+            className={`text-foreground text-sm hover:underline underline-offset-[2.5px] decoration-wavy `}
           >
             {name}
           </Link>

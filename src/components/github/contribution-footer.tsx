@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ExternalLink, GitPullRequest } from "lucide-react";
-
 import type { OpenSourceRepository } from "@/lib/github-contributions";
+import { BiChevronDown, BiGitPullRequest } from "react-icons/bi";
+import { HiExternalLink } from "react-icons/hi";
 
 type ContributionFooterProps = {
   repositories: OpenSourceRepository[];
@@ -35,7 +35,7 @@ export function ContributionFooter({
   }
 
   return (
-    <section className="mt-3 overflow-hidden rounded-xl bg-github-footer-background py-2 px-4">
+    <section className="mt-3 overflow-hidden rounded-xl bg-github-footer-background p-1.5 sm:p-2">
       {/* Main disclosure */}
       <button
         type="button"
@@ -66,7 +66,7 @@ export function ContributionFooter({
           </span>
 
           <span className="flex size-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-foreground">
-            <ChevronDown
+            <BiChevronDown
               className={`size-4 transition-transform duration-200 ${
                 isOpen ? "rotate-180" : ""
               }`}
@@ -77,7 +77,7 @@ export function ContributionFooter({
 
       {/* Expanded repository panel */}
       {isOpen && (
-        <div className="mt-4 border-t border-border pt-3">
+        <div className="mt-2 border-t border-border">
           {repositories.length === 0 ? (
             <div className="py-6 text-sm text-muted-foreground">
               No public external pull requests were found for this year.
@@ -91,7 +91,7 @@ export function ContributionFooter({
               </a>
             </div>
           ) : (
-            <div className="divide- divide-border">
+            <div className="">
               {repositories.map((repository) => {
                 const repositoryExpanded = expandedRepositories.has(
                   repository.fullName,
@@ -104,10 +104,10 @@ export function ContributionFooter({
                       type="button"
                       onClick={() => toggleRepository(repository.fullName)}
                       aria-expanded={repositoryExpanded}
-                      className="flex w-full items-center gap-3 rounded-xl px-2 py-3 text-left transition-colors hover:bg-muted/50"
+                      className="flex w-full items-center gap-3 rounded-xl px-2 py-3 text-left"
                     >
-                      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
-                        <GitPullRequest className="size-4" />
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
+                        <BiGitPullRequest className="size-4" />
                       </span>
 
                       <span className="min-w-0 flex-1">
@@ -125,7 +125,7 @@ export function ContributionFooter({
                         {repository.pullRequestCount === 1 ? "PR" : "PRs"}
                       </span>
 
-                      <ChevronDown
+                      <BiChevronDown
                         className={`size-4 shrink-0 text-muted-foreground transition-transform duration-200 ${
                           repositoryExpanded ? "rotate-180" : ""
                         }`}
@@ -134,7 +134,7 @@ export function ContributionFooter({
 
                     {/* Nested pull requests */}
                     {repositoryExpanded && (
-                      <div className="pb-3">
+                      <div className="pb-2">
                         <div className="space-y-1">
                           {repository.pullRequests.map((pr) => {
                             const status = pr.merged
@@ -155,14 +155,14 @@ export function ContributionFooter({
                                 href={pr.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-start gap-3 rounded-xl px-2 py-2 transition-colors hover:bg-muted/40"
+                                className="group flex items-start gap-3 rounded-xl px-2 py-2"
                               >
                                 <span className="mt-0.5 shrink-0 font-mono text-xs text-muted-foreground">
                                   #{pr.number}
                                 </span>
 
                                 <span className="min-w-0 flex-1">
-                                  <span className="block text-sm leading-5 text-foreground transition-colors">
+                                  <span className="block text-sm leading-5 text-foreground transition-colors group-hover:underline decoration-wavy underline-offset-[2.5px]">
                                     {pr.title}
                                   </span>
 
@@ -173,7 +173,7 @@ export function ContributionFooter({
                                   </span>
                                 </span>
 
-                                <ExternalLink className="mt-1 size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                                <HiExternalLink className="mt-1 size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                               </a>
                             );
                           })}

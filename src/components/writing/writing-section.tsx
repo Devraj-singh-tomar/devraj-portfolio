@@ -8,7 +8,7 @@ export function WritingSection() {
   return (
     <section>
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-base font-normal">Writing</h2>
+        <h2 className="text-lg font-normal">Writing</h2>
 
         <Link
           href="/writing"
