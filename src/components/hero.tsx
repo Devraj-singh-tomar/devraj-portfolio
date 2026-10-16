@@ -7,17 +7,15 @@ export default function Hero() {
     <section>
       <HeroHeader title={siteConfig.name} description={siteConfig.tagline} />
 
-      <p className="mt-5 max-w-[34rem] text-sm leading-6 text-muted-foreground">
+      <p className="mt-5 max-w-136 text-sm leading-6 text-muted-foreground">
         Currently building{" "}
         <a
           href={siteConfig.currentlyBuilding.href}
-          className="text-foreground underline underline-offset-[2.5px] decoration-wavy"
+          className="text-foreground font-medium"
         >
           {siteConfig.currentlyBuilding.name}
         </a>
-        , {siteConfig.currentlyBuilding.description} My work spans full-stack
-        development, real-time communication, AI-powered applications, and
-        backend infrastructure.
+        , {siteConfig.currentlyBuilding.description}
       </p>
 
       <SocialLinks />

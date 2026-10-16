@@ -35,7 +35,7 @@ export function ContributionFooter({
   }
 
   return (
-    <section className="mt-3 overflow-hidden rounded-[1.5rem] bg-github-footer-background py-2 px-4">
+    <section className="mt-3 overflow-hidden rounded-xl bg-github-footer-background py-2 px-4">
       {/* Main disclosure */}
       <button
         type="button"
@@ -155,7 +155,7 @@ export function ContributionFooter({
                                 href={pr.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-start gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-muted/40"
+                                className="group flex items-start gap-3 rounded-xl px-2 py-2 transition-colors hover:bg-muted/40"
                               >
                                 <span className="mt-0.5 shrink-0 font-mono text-xs text-muted-foreground">
                                   #{pr.number}

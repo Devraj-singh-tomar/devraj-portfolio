@@ -52,7 +52,7 @@ export function ContributionGrid({
           return (
             <div
               key={week.contributionDays[0]?.date ?? weekIndex}
-              className="grid grid-rows-7 gap-[3px]"
+              className="grid grid-rows-7 gap-0.75"
             >
               {Array.from({ length: 7 }, (_, weekday) => {
                 const day = daysByWeekday.get(weekday);
@@ -62,7 +62,7 @@ export function ContributionGrid({
                     <span
                       key={weekday}
                       aria-hidden="true"
-                      className="size-[clamp(9px,1.7vw,12px)] rounded-[3px] bg-transparent"
+                      className="size-[clamp(9px,1.7vw,12px)] rounded-full bg-transparent"
                     />
                   );
                 }
@@ -75,7 +75,7 @@ export function ContributionGrid({
                     <span
                       key={day.date}
                       aria-hidden="true"
-                      className="size-[clamp(9px,1.7vw,12px)] rounded-[3px] bg-transparent"
+                      className="size-[clamp(9px,1.7vw,12px)] rounded-full bg-transparent"
                     />
                   );
                 }
@@ -96,7 +96,7 @@ export function ContributionGrid({
                   <Tooltip key={day.date}>
                     <TooltipTrigger
                       aria-label={`${countLabel} on ${dateLabel}`}
-                      className={`${contributionColors[day.contributionLevel] ?? contributionColors.NONE} block size-[clamp(9px,1.7vw,12px)] cursor-default rounded-[3px] border-0 p-0 transition-opacity hover:opacity-75`}
+                      className={`${contributionColors[day.contributionLevel] ?? contributionColors.NONE} block size-[clamp(9px,1.7vw,12px)] cursor-default rounded-full border-0 p-0 transition-opacity hover:opacity-75`}
                       style={{
                         backgroundColor:
                           contributionColors[day.contributionLevel] ??

@@ -9,9 +9,16 @@ type ProjectItemProps = {
 export function ProjectItem({ project }: ProjectItemProps) {
   return (
     <article className="group">
-      <h3 className="text-sm leading-5">{project.title}</h3>
+      <Link
+        href={project.live}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm leading-5 hover:underline underline-offset-[2.5px] decoration-wavy"
+      >
+        {project.title}
+      </Link>
 
-      <p className="mt-1 max-w-[34rem] text-sm leading-5.5 text-muted-foreground">
+      <p className="mt-1 max-w-136 text-sm leading-5.5 text-muted-foreground">
         {project.description}
       </p>
 
@@ -26,14 +33,14 @@ export function ProjectItem({ project }: ProjectItemProps) {
         </Link>
 
         {project.live && (
-          <a
+          <Link
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
             className=" hover:text-foreground"
           >
             Live
-          </a>
+          </Link>
         )}
       </div>
     </article>

@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "Devraj Singh Tomar",
 
-  email: "devrajsinghtomar722@gmail.com",
+  email: "devrajst23@gmail.com",
 
   githubUsername: "Devraj-singh-tomar",
 
   tagline:
-    "I design and build full-stack products with a focus on real-time systems, AI, and distributed infrastructure.",
+    "I design and build full-stack products with a focus on real-time systems and AI.",
 
   currentlyBuilding: {
     name: "PeerDrop",

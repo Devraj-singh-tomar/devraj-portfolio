@@ -79,7 +79,7 @@ export async function GitHubContributionCard() {
 
   if (!data) {
     return (
-      <section className="mt-8 rounded-[2rem] bg-github-card-background p-5">
+      <section className="mt-8 rounded-xl bg-github-card-background p-5">
         <p className="text-sm text-muted-foreground">
           GitHub contributions are currently unavailable.
         </p>
@@ -99,9 +99,9 @@ export async function GitHubContributionCard() {
   return (
     <section
       aria-label="GitHub contribution activity"
-      className="rounded-[2rem] bg-github-card-background sm:p-5"
+      className="rounded-xl bg-github-card-background p-2.5 sm:p-4"
     >
-      <h2 className="mb-5 font-normal leading-6 text-foreground text-[16px]">
+      <h2 className="mb-5 font-normal leading-6 text-foreground text-sm">
         {data.totalContributions.toLocaleString("en-US")} contributions in{" "}
         {data.year}
       </h2>

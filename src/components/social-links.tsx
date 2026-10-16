@@ -28,7 +28,7 @@ export default function SocialLinks() {
   return (
     <footer className="flex gap-4 pt-6">
       <Tooltip>
-        <TooltipTrigger className="text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy">
+        <TooltipTrigger className="text-muted-foreground text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy">
           Email
         </TooltipTrigger>
 
@@ -56,7 +56,7 @@ export default function SocialLinks() {
             rel="noopener noreferrer"
             key={name}
             href={href}
-            className={`text-muted-foreground rounded-full text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy `}
+            className={`text-muted-foreground text-sm hover:text-foreground hover:underline underline-offset-[2.5px] decoration-wavy `}
           >
             {name}
           </Link>
