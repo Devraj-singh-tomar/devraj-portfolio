@@ -8,7 +8,7 @@ export function ProjectsSection() {
   return (
     <section>
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-lg font-normal">Projects</h2>
+        <h2 className="text-sm font-normal tracking-wide">Projects</h2>
 
         <Link
           href="/projects"
