@@ -16,9 +16,9 @@ export const siteConfig = {
   },
 
   socials: {
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/devrajst",
     github: "https://github.com/Devraj-singh-tomar",
-    x: "https://x.com/tomar_devraj01",
+    x: "https://x.com/devraj_st",
   },
 
   links: {
