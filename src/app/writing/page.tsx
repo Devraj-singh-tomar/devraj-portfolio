@@ -17,7 +17,7 @@ export default function WritingPage() {
       <section className="mt-10">
         <div className="flex flex-col gap-7">
           {writings.map((writing) => (
-            <WritingItem key={writing.source.href} writing={writing} />
+            <WritingItem key={writing.title} writing={writing} />
           ))}
         </div>
       </section>

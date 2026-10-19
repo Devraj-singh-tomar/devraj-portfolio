@@ -96,7 +96,7 @@ export function ContributionGrid({
                   <Tooltip key={day.date}>
                     <TooltipTrigger
                       aria-label={`${countLabel} on ${dateLabel}`}
-                      className={`${contributionColors[day.contributionLevel] ?? contributionColors.NONE} block size-[clamp(9px,1.7vw,12px)] cursor-default rounded border-0 p-0 transition-opacity hover:opacity-75`}
+                      className={`${contributionColors[day.contributionLevel] ?? contributionColors.NONE} block size-[clamp(9px,1.7vw,12px)] cursor-default rounded-[3px] border-0 p-0 hover:opacity-75`}
                       style={{
                         backgroundColor:
                           contributionColors[day.contributionLevel] ??

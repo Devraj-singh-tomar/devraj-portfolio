@@ -101,7 +101,7 @@ export async function GitHubContributionCard() {
       aria-label="GitHub contribution activity"
       className="rounded-xl bg-github-card-background p-2.5 sm:p-4"
     >
-      <h2 className="mb-5 font-normal leading-6 text-foreground text-sm">
+      <h2 className="mb-5 font-normal leading-6 text-foreground text-sm sm:text-base">
         {data.totalContributions.toLocaleString("en-US")} contributions in{" "}
         {data.year}
       </h2>

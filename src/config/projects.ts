@@ -11,6 +11,6 @@ export const projects: Project[] = [
     description:
       "A peer-to-peer file transfer system that sends files directly between browsers using WebRTC, with WebSockets and Redis powering the surrounding infrastructure.",
     github: "https://github.com/Devraj-singh-tomar/peerdrop",
-    live: "/peerdrop",
+    live: "/",
   },
 ];

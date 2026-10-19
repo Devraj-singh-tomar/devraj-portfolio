@@ -20,7 +20,7 @@ export function WritingSection() {
 
       <div className="flex flex-col gap-7">
         {featuredWriting.map((writing) => (
-          <WritingItem key={writing.source.href} writing={writing} />
+          <WritingItem key={writing.title} writing={writing} />
         ))}
       </div>
     </section>

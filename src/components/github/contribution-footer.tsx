@@ -35,7 +35,7 @@ export function ContributionFooter({
   }
 
   return (
-    <section className="mt-3 overflow-hidden rounded-xl bg-github-footer-background p-1.5 sm:p-2">
+    <section className="mt-3 overflow-hidden rounded-xl bg-github-footer-background p-1.7 sm:p-3">
       {/* Main disclosure */}
       <button
         type="button"
@@ -65,11 +65,9 @@ export function ContributionFooter({
             ))}
           </span>
 
-          <span className="flex size-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-foreground">
+          <span className="flex size-8 items-center justify-center rounded-full border-2 border-border text-muted-foreground hover:text-foreground">
             <BiChevronDown
-              className={`size-4 transition-transform duration-200 ${
-                isOpen ? "rotate-180" : ""
-              }`}
+              className={`size-4  ${isOpen ? "rotate-180" : ""}`}
             />
           </span>
         </span>
@@ -126,7 +124,7 @@ export function ContributionFooter({
                       </span>
 
                       <BiChevronDown
-                        className={`size-4 shrink-0 text-muted-foreground transition-transform duration-200 ${
+                        className={`size-4 shrink-0 text-muted-foreground ${
                           repositoryExpanded ? "rotate-180" : ""
                         }`}
                       />
