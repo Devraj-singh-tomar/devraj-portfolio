@@ -11,10 +11,10 @@ const navLinks = [
     name: "Home",
     href: "/",
   },
-  // {
-  //   name: "Experience",
-  //   href: "/experience",
-  // },
+  {
+    name: "Experience",
+    href: "/experience",
+  },
   {
     name: "Projects",
     href: "/projects",
@@ -23,10 +23,10 @@ const navLinks = [
     name: "Writing",
     href: "/writing",
   },
-  // {
-  //   name: "Resume",
-  //   href: siteConfig.links.resume,
-  // },
+  {
+    name: "Resume",
+    href: siteConfig.links.resume,
+  },
 ];
 
 export default function Header() {

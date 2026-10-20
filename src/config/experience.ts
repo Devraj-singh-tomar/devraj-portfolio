@@ -25,16 +25,16 @@ export const experiences: Experience[] = [
     ],
   },
 
-  {
-    company: "Google",
-    href: "https://Google.com",
-    period: "Mar 2026 to Present",
-    logo: "/experience/google.jpg",
-    roles: [
-      {
-        title: "Software Engineering Intern",
-        period: "Jun 2024 to Dec 2024",
-      },
-    ],
-  },
+  // {
+  //   company: "Google",
+  //   href: "https://Google.com",
+  //   period: "Mar 2026 to Present",
+  //   logo: "/experience/google.jpg",
+  //   roles: [
+  //     {
+  //       title: "Software Engineering Intern",
+  //       period: "Jun 2024 to Dec 2024",
+  //     },
+  //   ],
+  // },
 ];

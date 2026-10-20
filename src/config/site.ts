@@ -1,5 +1,9 @@
 export const siteConfig = {
+  url: "https://devrajst.com",
   name: "Devraj Singh Tomar",
+  title: "Full-Stack Software Engineer",
+  description:
+    "Portfolio of Devraj Singh Tomar, a full-stack software engineer focused on web applications, real-time systems, AI, and distributed infrastructure.",
 
   email: "devrajst23@gmail.com",
 
@@ -22,7 +26,7 @@ export const siteConfig = {
   },
 
   links: {
-    resume: "/resume.pdf",
+    resume: "/https://cal.com",
     calendar: "https://cal.com",
   },
 } as const;
