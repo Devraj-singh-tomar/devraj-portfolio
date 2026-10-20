@@ -37,7 +37,7 @@ export function createPageMetadata({
     },
 
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       creator: "@devraj_st",
       title: socialTitle,
       description,

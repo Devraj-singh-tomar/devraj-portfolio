@@ -20,6 +20,7 @@ const defaultTitle = `${siteConfig.name} - ${siteConfig.title}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+
   title: {
     default: defaultTitle,
     template: `%s | ${siteConfig.name}`,
@@ -27,14 +28,17 @@ export const metadata: Metadata = {
 
   description: siteConfig.description,
   applicationName: siteConfig.name,
+
   authors: [
     {
       name: siteConfig.name,
       url: siteConfig.url,
     },
   ],
+
   creator: siteConfig.name,
   publisher: siteConfig.name,
+
   robots: {
     index: $isProductionDeployment,
     follow: $isProductionDeployment,
@@ -46,15 +50,18 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   openGraph: {
     type: "website",
     locale: "en_IN",
     siteName: siteConfig.name,
+    url: siteConfig.url,
     title: defaultTitle,
     description: siteConfig.description,
   },
+
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     creator: "@devraj_st",
     title: defaultTitle,
     description: siteConfig.description,
