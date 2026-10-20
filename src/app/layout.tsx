@@ -7,19 +7,58 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import "./globals.css";
+import { siteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
+const $isProductionDeployment = process.env.VERCEL_ENV === "production";
+
+const defaultTitle = `${siteConfig.name} - ${siteConfig.title}`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Devraj Singh Tomar - Full-Stack Software Engineer",
-    template: "%s | Devraj Singh Tomar",
+    default: defaultTitle,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "I build full-stack products focused on real-time systems, AI, and reliable web infrastructure. Explore my projects and technical writing.",
+
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [
+    {
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  ],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  robots: {
+    index: $isProductionDeployment,
+    follow: $isProductionDeployment,
+    googleBot: {
+      index: $isProductionDeployment,
+      follow: $isProductionDeployment,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: siteConfig.name,
+    title: defaultTitle,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary",
+    creator: "@devraj_st",
+    title: defaultTitle,
+    description: siteConfig.description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,13 +1,14 @@
 import { HeroHeader } from "@/components/hero-header";
 import { ProjectItem } from "@/components/projects/project-item";
 import { projects } from "@/config/projects";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Projects",
   description:
-    "Explore full-stack projects focused on real-time systems, AI, and web infrastructure.",
-};
+    "Explore software projects by Devraj Singh Tomar, including full-stack applications, real-time systems, and experiments with modern web technologies.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (

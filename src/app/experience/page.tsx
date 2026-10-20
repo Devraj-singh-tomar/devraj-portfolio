@@ -1,13 +1,14 @@
 import { ExperienceItem } from "@/components/experience/experience-item";
 import { HeroHeader } from "@/components/hero-header";
 import { experiences } from "@/config/experience";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Experience",
   description:
-    "Explore my software development experience, projects, and practical work in full-stack development, real-time systems, and AI.",
-};
+    "Explore my software development journey, independent projects, and practical work in full-stack development and real-time systems.",
+  path: "/experience",
+});
 
 export default function ExperiencePage() {
   return (
