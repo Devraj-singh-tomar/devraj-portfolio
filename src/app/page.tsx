@@ -1,4 +1,3 @@
-import { GitHubContributionCard } from "@/components/github/github-contribution-card";
 import Hero from "@/components/hero";
 import { ProjectsSection } from "@/components/projects/projects-section";
 import { WritingSection } from "@/components/writing/writing-section";
@@ -9,8 +8,6 @@ export default function Home() {
       <Hero />
 
       <ProjectsSection />
-
-      <GitHubContributionCard />
 
       <WritingSection />
     </div>
