@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { useEffect, useRef, useState } from "react";
 import { BiCheck, BiCopy } from "react-icons/bi";
-import { Calendar, Github, Gmail, Linkedin, X } from "./icons";
+import { Github, Gmail, Linkedin, X } from "./icons";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 const socialLinks = [
@@ -80,7 +80,7 @@ export default function SocialLinks() {
   return (
     <nav
       aria-label="Social links"
-      className="flex items-center flex-wrap gap-4.5 sm:gap-6 pt-6"
+      className="flex items-center flex-wrap gap-2 sm:gap-3.5 pt-6"
     >
       <Tooltip>
         <TooltipTrigger
@@ -89,7 +89,7 @@ export default function SocialLinks() {
             copyStatus === "copied" ? "Email copied" : "Copy email address"
           }
           onClick={copyEmail}
-          className="group relative inline-flex text-muted-foreground hover:text-foreground items-center"
+          className="group relative inline-flex size-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
         >
           {copyStatus === "copied" ? (
             <BiCheck
@@ -127,7 +127,7 @@ export default function SocialLinks() {
                   href={href}
                 />
               }
-              className="inline-flex items-center justify-center rounded-lg text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="group inline-flex size-9 shrink-0  items-center justify-center rounded-lg text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <Icon
                 className={`${name === "Calendar" ? "size-5.5" : "size-5"}`}

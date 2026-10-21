@@ -34,6 +34,14 @@ export function createPageMetadata({
       url: canonicalUrl,
       title: socialTitle,
       description,
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} — ${siteConfig.title}`,
+        },
+      ],
     },
 
     twitter: {
@@ -41,6 +49,7 @@ export function createPageMetadata({
       creator: "@devraj_st",
       title: socialTitle,
       description,
+      images: ["/twitter-image"],
     },
   };
 }

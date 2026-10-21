@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site";
 import { HeroHeader } from "./hero-header";
 import SocialLinks from "./social-links";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -9,12 +10,12 @@ export default function Hero() {
 
       <p className="mt-3 max-w-136 text-sm leading-6 text-muted-foreground">
         Currently building{" "}
-        <a
+        <Link
           href={siteConfig.currentlyBuilding.href}
           className="text-foreground font-medium"
         >
           {siteConfig.currentlyBuilding.name}
-        </a>
+        </Link>
         , {siteConfig.currentlyBuilding.description}
       </p>
 

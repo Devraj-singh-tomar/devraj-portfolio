@@ -23,10 +23,10 @@ const navLinks = [
     name: "Writing",
     href: "/writing",
   },
-  {
-    name: "Resume",
-    href: siteConfig.links.resume,
-  },
+  // {
+  //   name: "Resume",
+  //   href: siteConfig.links.resume,
+  // },
 ];
 
 export default function Header() {
@@ -52,10 +52,18 @@ export default function Header() {
       }
     }
 
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    }
+
     document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isMenuOpen]);
 
@@ -114,14 +122,15 @@ export default function Header() {
       {/* Desktop Navigation */}
 
       <nav
-        aria-label="Main navgation"
+        aria-label="Main navigation"
         className="hidden sm:flex gap-3.5 sm:gap-5 items-center"
       >
         {navLinks.map(({ href, name }) => (
           <Link
             key={href}
             href={href}
-            className={`${pathName === href ? "underline underline-offset-[2.5px] decoration-wavy" : "text-muted-foreground"}  text-sm hover:text-foreground `}
+            aria-current={isActive(href) ? "page" : undefined}
+            className={`${isActive(href) ? "underline underline-offset-[2.5px] decoration-wavy" : "text-muted-foreground"}  text-sm hover:text-foreground `}
           >
             {name}
           </Link>

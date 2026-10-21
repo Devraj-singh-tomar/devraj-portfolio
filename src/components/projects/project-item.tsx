@@ -9,14 +9,9 @@ type ProjectItemProps = {
 export function ProjectItem({ project }: ProjectItemProps) {
   return (
     <article className="group cursor-default">
-      <Link
-        href={project.live}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-sm leading-5 group-hover:underline underline-offset-[2.5px] decoration-wavy"
-      >
+      <h3 className="text-sm leading-5 group-hover:underline underline-offset-[2.5px] decoration-wavy">
         {project.title}
-      </Link>
+      </h3>
 
       <p className="mt-1 max-w-136 text-sm leading-5.5 text-muted-foreground">
         {project.description}
@@ -27,9 +22,10 @@ export function ProjectItem({ project }: ProjectItemProps) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`View ${project.title} source code on GitHub`}
           className="hover:text-foreground"
         >
-          <Github className="size-4.5" />
+          <Github aria-hidden="true" className="size-4.5" />
         </Link>
 
         {project.live && (

@@ -6,9 +6,14 @@ export function ProjectsSection() {
   const featuredProjects = projects.slice(0, 5);
 
   return (
-    <section>
+    <section aria-labelledby="featured-projects-heading">
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-sm font-normal tracking-wide">Projects</h2>
+        <h2
+          id="featured-projects-heading"
+          className="text-sm font-normal tracking-wide"
+        >
+          Projects
+        </h2>
 
         <Link
           href="/projects"

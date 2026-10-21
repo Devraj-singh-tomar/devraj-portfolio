@@ -15,7 +15,7 @@ export default function ProjectsPage() {
     <div>
       <HeroHeader
         title="Projects"
-        description=" Things I've built and shipped."
+        description="Things I've built and am working on."
       />
 
       <section className="mt-10">

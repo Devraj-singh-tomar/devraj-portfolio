@@ -5,16 +5,17 @@ import { CgDarkMode } from "react-icons/cg";
 import { Button } from "../ui/button";
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
 
   return (
     <Button
+      type="button"
       variant="ghost"
       size="icon"
       className={"rounded-full"}
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
     >
-      <CgDarkMode className={`size-10 w-[1.3rem]`} />
+      <CgDarkMode aria-hidden="true" className="size-6" />
 
       <span className="sr-only">Toggle theme</span>
     </Button>

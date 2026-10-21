@@ -13,11 +13,11 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
         {experience.logo ? (
           <img
             src={experience.logo}
-            alt={`${experience.company} logo`}
+            alt=""
             className="size-7 rounded-full object-cover"
           />
         ) : (
-          <div className="size-7 rounded-full bg-muted" />
+          <div aria-hidden="true" className="size-7 rounded-full bg-muted" />
         )}
       </div>
 
@@ -25,20 +25,21 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
       <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-3">
         {/* Company heading and separator */}
         <div className="flex group-hover:underline underline-offset-[2.5px] decoration-wavy min-w-0 items-center gap-3">
-          {experience.href ? (
-            <a
-              href={experience.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 text-sm text-foreground transition-colors "
-            >
-              {experience.company}
-            </a>
-          ) : (
-            <h2 className="shrink-0 text-sm font-normal">
-              {experience.company}
-            </h2>
-          )}
+          <h2 className="shrink-0 text-sm font-normal text-foreground">
+            {experience.href ? (
+              <a
+                href={experience.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 text-sm"
+              >
+                {experience.company}
+              </a>
+            ) : (
+              experience.company
+            )}
+          </h2>
+
           <div className="h-px min-w-3 flex-1 bg-border" />
         </div>
 

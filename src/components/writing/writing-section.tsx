@@ -6,9 +6,14 @@ export function WritingSection() {
   const featuredWriting = writings.slice(0, 5);
 
   return (
-    <section>
+    <section aria-labelledby="featured-writing-heading">
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-sm font-normal tracking-wide">Writing</h2>
+        <h2
+          id="featured-writing-heading"
+          className="text-sm font-normal tracking-wide"
+        >
+          Writing
+        </h2>
 
         <Link
           href="/writing"

@@ -6,9 +6,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
-import "./globals.css";
-import { siteConfig } from "@/config/site";
 import StructuredData from "@/components/seo/structured-data";
+import { siteConfig } from "@/config/site";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -77,6 +77,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-dvh font-sans">
+        <a
+          href="#main-content"
+          className="sr-only z-100 rounded-md bg-background p-3 text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to main content
+        </a>
+
         <StructuredData />
 
         <ThemeProvider
@@ -89,7 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <div className="min-h-dvh mx-auto max-w-xl px-5 pt-7 pb-10 sm:px-4 flex flex-col w-full gap-6">
               <Header />
 
-              <main id="main-content" className="flex-1">
+              <main id="main-content" tabIndex={-1} className="flex-1">
                 {children}
               </main>
 
