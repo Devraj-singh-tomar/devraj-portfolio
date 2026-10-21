@@ -8,6 +8,7 @@ import { Geist } from "next/font/google";
 
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import StructuredData from "@/components/seo/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,6 +77,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-dvh font-sans">
+        <StructuredData />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
