@@ -1,9 +1,10 @@
 import { writings } from "@/config/writing";
 import Link from "next/link";
 import { WritingItem } from "./writing-item";
+import { EmptyState } from "../empty-state";
 
 export function WritingSection() {
-  const featuredWriting = writings.slice(0, 5);
+  const featuredWriting = writings.slice(0, 4);
 
   return (
     <section aria-labelledby="featured-writing-heading">
@@ -23,11 +24,21 @@ export function WritingSection() {
         </Link>
       </div>
 
-      <div className="flex flex-col gap-7">
-        {featuredWriting.map((writing) => (
-          <WritingItem key={writing.title} writing={writing} />
-        ))}
-      </div>
+      {featuredWriting.length > 0 ? (
+        <div className="flex flex-col gap-7">
+          {featuredWriting.map((writing) => (
+            <WritingItem key={writing.title} writing={writing} />
+          ))}
+        </div>
+      ) : (
+        <EmptyState>
+          <p>
+            I&apos;m preparing technical write-ups about WebRTC, real-time
+            systems, and lessons from building full-stack products. I&apos;ll
+            publish them here when they&apos;re ready.
+          </p>
+        </EmptyState>
+      )}
     </section>
   );
 }

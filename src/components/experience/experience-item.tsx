@@ -1,4 +1,5 @@
 import type { Experience } from "@/config/experience";
+import Image from "next/image";
 import { Fragment } from "react";
 
 type ExperienceItemProps = {
@@ -11,7 +12,9 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
       {/* Company logo */}
       <div className="flex justify-center pt-0.5">
         {experience.logo ? (
-          <img
+          <Image
+            height={100}
+            width={100}
             src={experience.logo}
             alt=""
             className="size-7 rounded-full object-cover"

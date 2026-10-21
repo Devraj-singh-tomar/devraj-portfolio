@@ -12,19 +12,18 @@ export type Experience = {
 };
 
 export const experiences: Experience[] = [
-  {
-    company: "Memo0",
-    href: "https://mem0.ai",
-    period: "Mar 2026 to Present",
-    logo: "/experience/google.jpg",
-    roles: [
-      {
-        title: "Software Engineer",
-        period: "Jan 2025 to Present",
-      },
-    ],
-  },
-
+  // {
+  //   company: "Memo0",
+  //   href: "https://mem0.ai",
+  //   period: "Mar 2026 to Present",
+  //   logo: "/experience/google.jpg",
+  //   roles: [
+  //     {
+  //       title: "Software Engineer",
+  //       period: "Jan 2025 to Present",
+  //     },
+  //   ],
+  // },
   // {
   //   company: "Google",
   //   href: "https://Google.com",

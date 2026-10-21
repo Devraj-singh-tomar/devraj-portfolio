@@ -1,3 +1,4 @@
+import { EmptyState } from "@/components/empty-state";
 import { HeroHeader } from "@/components/hero-header";
 import { ProjectItem } from "@/components/projects/project-item";
 import { projects } from "@/config/projects";
@@ -19,11 +20,26 @@ export default function ProjectsPage() {
       />
 
       <section className="mt-10">
-        <div className="flex flex-col gap-8">
-          {projects.map((project) => (
-            <ProjectItem key={project.title} project={project} />
-          ))}
-        </div>
+        {projects.length > 0 ? (
+          <div className="flex flex-col gap-8">
+            {projects.map((project) => (
+              <ProjectItem key={project.title} project={project} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState>
+            <p>
+              I&apos;m currently building and refining projects before adding
+              them here. PeerDrop is my current focus: a browser-to-browser file
+              transfer project built with WebRTC, WebSockets, and Redis.
+            </p>
+
+            <p>
+              I&apos;ll publish projects here as their demos and detailed case
+              studies are ready.
+            </p>
+          </EmptyState>
+        )}
       </section>
     </div>
   );
