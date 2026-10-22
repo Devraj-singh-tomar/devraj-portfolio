@@ -9,6 +9,7 @@ import { Geist } from "next/font/google";
 import StructuredData from "@/components/seo/structured-data";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,6 +105,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </div>
           </TooltipProvider>
         </ThemeProvider>
+
+        <Analytics />
       </body>
     </html>
   );

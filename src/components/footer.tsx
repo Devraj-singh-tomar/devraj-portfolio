@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import VisitorCount from "./visitor-count";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,14 +10,7 @@ export default function Footer() {
         © {year} {siteConfig.name}. All rights reserved.
       </p>
 
-      {/* <p className="flex items-center gap-1.5">
-        <span
-          aria-hidden="true"
-          className="size-1.5 rounded-full animate-pulse motion-reduce:animate-none bg-emerald-500"
-        />
-        <span className="text-foreground">6162356</span>
-        <span>visitor's</span>
-      </p> */}
+      <VisitorCount />
     </footer>
   );
 }
