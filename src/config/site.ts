@@ -16,7 +16,7 @@ export const siteConfig = {
     name: "PeerDrop",
     description:
       "a peer-to-peer file transfer system using WebRTC, WebSockets, and Redis.",
-    href: "https://cal.com",
+    href: "",
   },
 
   socials: {
